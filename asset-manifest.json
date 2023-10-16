@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/oyos_client/static/css/main.f3cd625c.css",
+    "main.js": "/oyos_client/static/js/main.1662e13c.js",
+    "static/media/Main01.png": "/oyos_client/static/media/Main01.7bf282653eeff7d5e405.png",
+    "static/media/slide02.png": "/oyos_client/static/media/slide02.460e11cc1575692b2acc.png",
+    "static/media/slide04.png": "/oyos_client/static/media/slide04.17b8f1435905ef048aac.png",
+    "static/media/slide07.png": "/oyos_client/static/media/slide07.455bc76f5167ffb7c945.png",
+    "static/media/slide03.png": "/oyos_client/static/media/slide03.d846539624de30c5fa31.png",
+    "static/media/slide06.png": "/oyos_client/static/media/slide06.8f8b3a687c3230c6869d.png",
+    "static/media/slide05.png": "/oyos_client/static/media/slide05.549966d42fa973342c50.png",
+    "static/media/slide01.png": "/oyos_client/static/media/slide01.9aa8432afb8385441233.png",
+    "static/media/linkVk.svg": "/oyos_client/static/media/linkVk.526852a4e90adacf3677561b3c055331.svg",
+    "static/media/linkEmail.svg": "/oyos_client/static/media/linkEmail.0350b505d1a789f96994e4e787f10b5e.svg",
+    "static/media/like.svg": "/oyos_client/static/media/like.f5137f72215dc59ae272bdb69d254f17.svg",
+    "static/media/linkTg.svg": "/oyos_client/static/media/linkTg.da2d04243664be1d3f0d7c44d363d38f.svg",
+    "static/media/add.svg": "/oyos_client/static/media/add.986c9a7163be322f6f8732a4cf5cd334.svg",
+    "static/media/search.svg": "/oyos_client/static/media/search.5ac50cf2ab97a4240230eb48af867f09.svg",
+    "static/media/delete.svg": "/oyos_client/static/media/delete.f3e0f4963dcd519a5568e1bf0df9bc21.svg",
+    "static/media/close.svg": "/oyos_client/static/media/close.e1d84b8533639517305672f3c6737678.svg",
+    "static/media/basket.svg": "/oyos_client/static/media/basket.3afa6aecd3f916081153c7af78c33c18.svg",
+    "static/media/sort.svg": "/oyos_client/static/media/sort.c25ba3c0bbd4ed07ca7b20a0f11c3801.svg",
+    "static/media/prev.svg": "/oyos_client/static/media/prev.21417931fbe16a6507a3f57e03bf86e9.svg",
+    "static/media/accept.svg": "/oyos_client/static/media/accept.3c00bf9f04ee4d08268f49e5388008a0.svg",
+    "static/media/arrow.svg": "/oyos_client/static/media/arrow.0383018f9e6928d52436b97924b04b25.svg",
+    "static/media/add02.svg": "/oyos_client/static/media/add02.3de41f945b7ade1040c96f206b5dea03.svg",
+    "index.html": "/oyos_client/index.html",
+    "static/media/burger.svg": "/oyos_client/static/media/burger.13b2a56064b1789747eda840aa8d4fd6.svg",
+    "main.f3cd625c.css.map": "/oyos_client/static/css/main.f3cd625c.css.map",
+    "main.1662e13c.js.map": "/oyos_client/static/js/main.1662e13c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3cd625c.css",
+    "static/js/main.1662e13c.js"
+  ]
+}
