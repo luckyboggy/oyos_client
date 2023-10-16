@@ -1,0 +1,46 @@
+.text {
+  color: var(--font-color);
+}
+
+.s {
+  font: var(--font-main-s);
+}
+
+.m {
+  font: var(--font-main-m);
+  letter-spacing: 1px;
+}
+
+.l {
+  font: var(--font-main-l);
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
+
+.right {
+  justify-content: right;
+}
+
+.left {
+  justify-content: left;
+}
+
+.pv1 {
+  margin: var(--padding-m) 0;
+  //padding: var(--padding-m) 0;
+}
+
+.pv2 {
+  margin: 2rem 0;
+}
+
+.pv4_2 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.font_test {
+}

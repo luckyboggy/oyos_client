@@ -1,0 +1,62 @@
+.orderItemAdmin {
+  margin-bottom: 1rem;
+  .orderInfo {
+    .title {
+      font: var(--font-main-s);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.25rem 0;
+      .number {
+        font: var(--font-main-m);
+      }
+      .status {
+        font: var(--font-main-s);
+      }
+    }
+    .userInfo {
+      font: var(--font-main-s);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.25rem 0;
+    }
+    .orderDate {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+    .priceQuantity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      .quantity {
+      }
+      .totalPrice {
+      }
+    }
+  }
+  .showBtn {
+    padding: 0.25rem 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font: var(--font-main-s);
+    .dropArrow {
+      margin-left: 0.5rem;
+      width: 18px;
+      height: 18px;
+      fill: var(--primary-color);
+      transform: rotate(180deg);
+    }
+    .active {
+      transform: rotate(0deg);
+    }
+  }
+
+  .orderProducts {
+    padding: 0.5rem 0;
+  }
+}

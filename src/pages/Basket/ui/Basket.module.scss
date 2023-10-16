@@ -1,0 +1,38 @@
+.basket {
+  padding: var(--padding-m);
+  .empty {
+    margin-top: var(--margin-m);
+    margin-bottom: calc(2 * var(--margin-m));
+    font: var(--font-main-m);
+    width: 100%;
+    text-align: center;
+  }
+
+  .check {
+    min-height: calc(100vh - var(--header-height-md) - 3 * var(--margin-m));
+    position: relative;
+    .title {
+      margin-top: var(--margin-m);
+      margin-bottom: calc(2 * var(--margin-m));
+      font: var(--font-main-m);
+      width: 100%;
+      text-align: center;
+    }
+    .products {
+      .totalPrice {
+        font: var(--font-main-s);
+        padding: 1rem 0;
+        display: flex;
+        justify-content: end;
+      }
+    }
+    .confirm {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+
+      .order {
+      }
+    }
+  }
+}

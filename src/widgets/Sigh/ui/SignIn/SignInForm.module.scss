@@ -1,0 +1,17 @@
+.signInForm {
+  position: relative;
+  min-height: calc(
+    100vh - var(--header-height-md) - 3 * var(--margin-m) - 26px
+  );
+  width: 100%;
+
+  .resetPass {
+    margin-top: 1rem;
+  }
+
+  .btns {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+}

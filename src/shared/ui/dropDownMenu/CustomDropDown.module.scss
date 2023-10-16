@@ -1,0 +1,33 @@
+.dropDown {
+  .dropArrow {
+    margin-left: 1rem;
+    width: 18px;
+    height: 18px;
+    fill: var(--primary-color);
+    transform: rotate(180deg);
+  }
+  .active {
+    transform: rotate(0deg);
+  }
+
+  .dropDownTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 14px 0;
+    color: var(--primary-color);
+  }
+
+  .dropDownContent {
+    padding-left: 1rem;
+    .dropDownItem {
+      display: block;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 14px 0;
+      color: var(--primary-color);
+    }
+  }
+}

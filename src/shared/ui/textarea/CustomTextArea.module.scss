@@ -1,0 +1,22 @@
+.cTextAria {
+  width: 100%;
+  padding: var(--padding-s);
+  margin: var(--margin-m) 0;
+  font-size: var(--font-main-m);
+  background: transparent;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.s {
+  padding: var(--padding-s);
+  margin: var(--margin-s) 0;
+  font: var(--font-main-s);
+}
+
+.m {
+  font: var(--font-main-m);
+}
+
+.l {
+  font: var(--font-main-l);
+}

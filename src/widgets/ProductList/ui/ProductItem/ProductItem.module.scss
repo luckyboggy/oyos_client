@@ -1,0 +1,40 @@
+.productItem {
+  margin-bottom: 15px;
+  .wrapper {
+    position: relative;
+    .productImg {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .like {
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .prodictLike {
+        width: 22px;
+        height: 22px;
+        fill: transparent;
+        stroke: var(--secondary-color);
+      }
+      .liked {
+        fill: var(--secondary-color);
+      }
+    }
+  }
+
+  .productContent {
+    .productName {
+      font: var(--font-main-s);
+    }
+    .productPrice {
+      font: var(--font-main-m);
+    }
+  }
+}

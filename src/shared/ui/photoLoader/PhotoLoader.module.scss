@@ -1,0 +1,49 @@
+.photoLoader {
+  position: relative;
+  .background {
+    width: 100%;
+    height: 100%;
+  }
+  .loaderWrapper {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+    .loader {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: inline-block;
+
+      background: linear-gradient(0deg, #eeeeee 33%, var(--primary-color) 100%);
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+    .loader::after {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #eeeeee;
+    }
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

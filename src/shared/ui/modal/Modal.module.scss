@@ -1,0 +1,81 @@
+.Modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #00000010;
+  transition: background-color 0.2s ease-in-out;
+  display: flex;
+  //align-items: center;
+  .central {
+    margin: auto;
+    width: 90%;
+    padding: var(--padding-m);
+    border-radius: 0.5rem;
+    background-color: var(--secondary-color);
+  }
+  .lower {
+    position: absolute;
+    height: calc(100vh - var(--header-height-md));
+    width: 100%;
+    padding: var(--padding-m);
+    bottom: calc(-100vh + var(--header-height-md));
+    transition: 0.2s ease-in-out;
+    border-top-left-radius: var(--padding-m);
+    border-top-right-radius: var(--padding-m);
+    background-color: var(--secondary-color);
+  }
+
+  .show {
+    bottom: 0;
+  }
+
+  .modalHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      font: var(--font-main-m);
+    }
+
+    .close {
+      position: absolute;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  .central .close {
+    right: calc(2 * var(--padding-m));
+  }
+
+  .lower .close {
+    right: var(--padding-m);
+  }
+
+  .modalHeaderLogo {
+    display: flex;
+    justify-content: center;
+    .headerLogo {
+      margin-top: 2rem;
+      height: 100px;
+    }
+    .closeLogo {
+      position: absolute;
+      right: calc(2 * var(--padding-m));
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
+
+.lower {
+  background-color: var(--opacity-color);
+}
+.central {
+  background-color: var(--opacity-color);
+  align-items: center;
+}

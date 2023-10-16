@@ -1,0 +1,62 @@
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+// colors
+:root {
+  // fonts
+  //--font-family-main: "Poppins", sans-serif;
+  --font-family-main: "Montserrat", sans-serif;
+  --font-family-logo: "Playfair Display SC", serif;
+
+  --font-size-s: 14px;
+  --font-line-s: 20px;
+  --font-main-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+
+  --font-size-m: 18px;
+  --font-line-m: 26px;
+  --font-main-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+
+  --font-size-l: 24px;
+  --font-line-l: 32px;
+  --font-main-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+
+  // colors
+  --basic-bg-color: white;
+
+  //--primary-color: lightslategrey;
+  --primary-color: rgb(39, 39, 39);
+  //--secondary-color: #ffe4c4;
+  --secondary-color: white;
+
+  --supporting-color: grey;
+
+  --font-color: #363e46;
+
+  --opacity-color: #000000b0;
+
+  // heights
+
+  // mobile
+  --header-height-md: 44px;
+  --footer-height-md: 297px;
+  --container-heighy-md: calc(100vh - 362px);
+
+  // paddings
+  --padding-s: 0.5rem;
+  --padding-m: 1rem;
+
+  // margins
+  --margin-s: 0.5rem;
+  --margin-m: 1rem;
+
+  // z-index
+  --header-z: 10;
+  --select-z: 5;
+  --mobilSearch-z: 15;
+  --mobileMenu-z: 20;
+}
+
+$font: rgb(54, 62, 70);

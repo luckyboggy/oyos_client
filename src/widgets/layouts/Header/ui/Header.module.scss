@@ -1,0 +1,99 @@
+.show {
+  transform: translateY(0);
+}
+.hide {
+  transform: translateY(-100%);
+}
+
+.header {
+  background: var(--primary-color);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease-in;
+  z-index: var(--header-z);
+
+  a {
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 8px;
+  }
+
+  .burger {
+    flex-basis: 20%;
+    display: flex;
+
+    .burgerIcon {
+      width: 34px;
+      height: 34px;
+      fill: var(--secondary-color);
+    }
+  }
+
+  .logo {
+    flex-basis: 60%;
+    font-size: 18px;
+    text-align: center;
+    font-family: var(--font-family-logo);
+    letter-spacing: 0.5px;
+  }
+
+  .naviBar {
+    display: none;
+  }
+
+  .icons {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .icon {
+    height: 22px;
+    width: 22px;
+    fill: var(--secondary-color);
+  }
+  .like {
+    fill: transparent;
+    stroke: var(--secondary-color);
+  }
+
+  .basketIcon {
+    position: relative;
+  }
+  .basketCount {
+    position: absolute;
+    background-color: var(--secondary-color);
+    color: black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -4px;
+    right: -8px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+
+.main {
+  //background-color: var(--opacity-color);
+  background: linear-gradient(var(--opacity-color), 80%, #00000000);
+  transform: translateY(0);
+}
+
+.main.hide {
+  background-color: black;
+  transform: translateY(0);
+}

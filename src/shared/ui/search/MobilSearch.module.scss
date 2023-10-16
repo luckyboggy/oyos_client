@@ -1,0 +1,13 @@
+.mobilSearch {
+    background-color: var(--opacity-color);
+    z-index: var(--mobilSearch-z);
+    position: fixed;
+    min-width: 100vw;
+    min-height: calc(100vh - 44px);
+    .searchWrapper {
+      background-color: var(--basic-bg-color);
+      height: 100px;
+      width: 100%;
+      padding: 0.5rem 1rem;
+    }
+  }

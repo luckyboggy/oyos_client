@@ -1,0 +1,75 @@
+.shop {
+  padding: calc(var(--padding-m) / 2);
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+
+    .selected {
+      font: var(--font-main-m);
+      color: var(--primary-color);
+      display: grid;
+
+      .selectedType {
+      }
+    }
+
+    .filter {
+      font: var(--font-main-m);
+      color: var(--primary-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      &:hover {
+        color: #0e3838;
+      }
+      .filterTitle {
+        display: flex;
+        align-items: center;
+        .filterName {
+          margin-right: 0.5rem;
+          font: var(--font-main-s);
+        }
+        .filterIcon {
+          height: 24px;
+          width: 24px;
+          fill: white;
+          stroke: var(--primary-color);
+          margin: auto;
+        }
+      }
+
+      .sortType {
+        font: var(--font-main-m);
+      }
+    }
+  }
+  .selectedTypes {
+    display: flex;
+    flex-wrap: wrap;
+    .selectedType {
+      display: inline-block;
+      position: relative;
+      display: flex;
+      //background-color: var(--supporting-color);
+      background-color: rgb(170, 170, 170);
+      color: var(--secondary-color);
+      height: 26px;
+      padding: 0.5rem 0.75rem;
+      margin: 0.25rem 0.5rem 0.25rem 0;
+      border-radius: 13px;
+      align-items: center;
+      .delete {
+        height: 16px;
+        width: 16px;
+        fill: var(--secondary-color);
+        margin-right: 0.5rem;
+      }
+      .typeName {
+        font: var(--font-main-s);
+      }
+    }
+  }
+}

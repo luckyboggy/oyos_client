@@ -1,0 +1,70 @@
+.carousel {
+  position: relative;
+  .carouselWrapper {
+    width: 100%;
+
+    .carouselLine {
+      img {
+        position: relative;
+        width: 100%;
+      }
+      .btns {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        position: absolute;
+        top: 45%;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          background-color: #ffffff;
+          box-shadow: 0px 0px 3px #ffffff;
+        }
+      }
+      .prev {
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .prevArrow {
+          width: 40px;
+          height: 40px;
+          fill: rgb(206, 206, 206);
+          &:hover {
+            fill: var(--primary-color);
+          }
+        }
+      }
+      .next {
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .nextArrow {
+          width: 40px;
+          height: 40px;
+          transform: rotate(180deg);
+          fill: rgb(206, 206, 206);
+          &:hover {
+            fill: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    .dotItem {
+      margin: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgb(206, 206, 206);
+    }
+    .current {
+      background-color: var(--primary-color);
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.customButton {
+  width: 100%;
+  padding: 12px;
+  font-size: var(--font-main-m);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+}
+
+.s {
+  font: var(--font-main-s);
+}
+
+.m {
+  font: var(--font-main-m);
+}
+
+.l {
+  font: var(--font-main-l);
+}
+
+.inverted {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
+
+.mt1 {
+  margin-top: var(--padding-m);
+}
+
+.mt2 {
+  margin-top: 18rem;
+}

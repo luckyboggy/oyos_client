@@ -1,0 +1,60 @@
+.orders {
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    margin: var(--margin-m) 0;
+
+    .selected {
+      font: var(--font-main-m);
+      color: var(--primary-color);
+      display: grid;
+
+      .selectedType {
+      }
+    }
+
+    .filter {
+      font: var(--font-main-m);
+      color: var(--primary-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      &:hover {
+        color: #0e3838;
+      }
+      .filterTitle {
+        display: flex;
+        align-items: center;
+        .filterName {
+          margin-right: 0.5rem;
+          font: var(--font-main-s);
+        }
+        .filterIcon {
+          height: 24px;
+          width: 24px;
+          fill: white;
+          stroke: var(--primary-color);
+          margin: auto;
+        }
+      }
+
+      .sortType {
+        font: var(--font-main-m);
+      }
+    }
+  }
+  .filters {
+    position: relative;
+    height: calc(100vh - var(--header-height-md) - 3rem - 26px);
+    width: 100%;
+    .statusSelector {
+    }
+    .accceptBtn {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}

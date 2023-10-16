@@ -1,0 +1,9 @@
+.personal {
+  min-height: calc(100vh - var(--header-height-md) - 43px - 4rem);
+  position: relative;
+  .btns {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,30 @@
+.toLogin {
+  .toAuth {
+  }
+  .emptySpace {
+    min-height: calc(100vh - 240px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .toShop {
+      width: 150px;
+
+      .link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 14px 0;
+        color: var(--primary-color);
+        .linkArrow {
+          margin-left: 1rem;
+          width: 18px;
+          height: 18px;
+          fill: var(--primary-color);
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

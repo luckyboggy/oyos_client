@@ -1,0 +1,15 @@
+.checkBox {
+  padding: 0.5rem 0;
+  input[type="radio"] {
+    transform: scale(1.5);
+    accent-color: var(--primary-color);
+  }
+  input[type="checkbox"] {
+    transform: scale(1.5);
+    accent-color: var(--primary-color);
+  }
+  label {
+    margin-left: 1.5rem;
+    font: var(--font-main-m);
+  }
+}

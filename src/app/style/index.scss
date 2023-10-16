@@ -1,0 +1,44 @@
+@import "reset.scss";
+@import "variables/global.scss";
+@import "breakpoint.scss";
+
+.app {
+  font-family: var(--font-family-main);
+}
+
+.text {
+  color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+.fs22 {
+  font-size: 22px;
+}
+
+.fs20 {
+  font-size: 20px;
+}
+
+main {
+}
+
+.container {
+  width: 100%;
+  margin-top: var(--header-height-md);
+  position: relative;
+  min-height: var(--container-heighy-md);
+  @include breakpoint(md) {
+    max-width: 800px;
+  }
+  @include breakpoint(lg) {
+    max-width: 1100px;
+  }
+  @include breakpoint(xl) {
+    max-width: 1400px;
+  }
+}
+
+.product__sort {
+  margin-top: 1rem;
+}
+
