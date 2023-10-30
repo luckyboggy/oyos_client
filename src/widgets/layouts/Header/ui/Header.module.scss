@@ -1,3 +1,5 @@
+@import "app/style/breakpoint.scss";
+
 .show {
   transform: translateY(0);
 }
@@ -25,7 +27,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 5px 8px;
+    padding: calc(var(--padding-s) / 2) var(--padding-s);
+    @include breakpoint(lg) {
+      padding: var(--padding-m) var(--padding-l);
+    }
   }
 
   .burger {
@@ -45,21 +50,35 @@
     text-align: center;
     font-family: var(--font-family-logo);
     letter-spacing: 0.5px;
+    @include breakpoint(lg) {
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
   }
 
   .naviBar {
     display: none;
   }
-
   .icons {
     flex-basis: 20%;
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
-  .icon {
+
+  .link {
     height: 22px;
     width: 22px;
+    fill: var(--secondary-color);
+    @include breakpoint(lg) {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  .icon {
+    height: 100%;
+    width: 100%;
     fill: var(--secondary-color);
   }
   .like {

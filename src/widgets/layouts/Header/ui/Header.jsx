@@ -1,8 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
+import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { Link } from "react-router-dom";
 import { ReactComponent as Basket } from "shared/assets/img/svg/basket.svg";
 import { ReactComponent as Like } from "shared/assets/img/svg/like.svg";
 import { ReactComponent as Burger } from "shared/assets/img/svg/burger.svg";
+import { ReactComponent as Auth } from "shared/assets/img/svg/person.svg";
+import { ReactComponent as Search } from "shared/assets/img/svg/search.svg";
 import { Context } from "index.js";
 import { observer } from "mobx-react-lite";
 import cls from "./Header.module.scss";
@@ -53,30 +56,17 @@ const Header = observer(
             <Link to="delivery">delivery</Link>
           </div>
           <div className={cls.icons}>
-            {/* <Search
-            className={cls.icon}
-            onClick={() => setMobilSearch(!mobilSearch)}
-          />
-          {user.isAuth && user.user.role === "ADMIN" && (
-            <Link to="admin">
-              <Auth className={cls.icon} />
-            </Link>
-          )}
-          {user.isAuth && user.user.role === "USER" && (
-            <Link to="user">
-              <Auth className={cls.icon} />
-            </Link>
-          )}
+            {useScreenSize().isLg && (
+              <Search
+                className={cls.link}
+                onClick={() => setMobilSearch(!mobilSearch)}
+              />
+            )}
 
-          {!user.isAuth && (
-            <Link to="login">
-              <Auth className={cls.icon} />
-            </Link>
-          )} */}
-            <Link to="favorites">
+            <Link to="favorites" className={cls.link}>
               <Like className={`${cls.icon} ${cls.like}`} />
             </Link>
-            <Link to="basket">
+            <Link to="basket" className={cls.link}>
               <div className={cls.basketIcon}>
                 <Basket className={cls.icon} />
 
@@ -91,6 +81,20 @@ const Header = observer(
                     )}
               </div>
             </Link>
+            {useScreenSize().isMd && (
+              <Link
+                to={
+                  user.isAuth && user.user.role === "ADMIN"
+                    ? "admin"
+                    : user.isAuth && user.user.role === "USER"
+                    ? "user"
+                    : "login"
+                }
+                className={cls.link}
+              >
+                <Auth className={cls.icon} />
+              </Link>
+            )}
           </div>
         </div>
       </header>

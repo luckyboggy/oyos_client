@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { ReactComponent as Prev } from "shared/assets/img/svg/prev.svg";
-import { IsMobil } from "../../lib/hooks/IsMobil.js";
+import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import classes from "./CustomCarousel.module.scss";
 
 const CustomCarousel = ({ images, url }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
-  const isMobil = IsMobil();
+  const isMobil = useScreenSize().isSm;
 
   const plusIndex = (n) => {
     if (currentIndex + n < 0) {

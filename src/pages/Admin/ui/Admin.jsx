@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Select } from "shared/ui/select2/Select";
-import { IsMobil } from "shared/lib/hooks/IsMobil.js";
+import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { CategoryManagement } from "entities/adminManagements/CategoryManagement";
 import { CollectionManagement } from "entities/adminManagements/CollectionsManagement";
 import { UserManagement } from "entities/adminManagements/UserManagement/";
@@ -11,8 +11,6 @@ import { observer } from "mobx-react-lite";
 import cls from "./Admin.module.scss";
 
 const Admin = observer(() => {
-  const isMobile = IsMobil();
-
   const management = [
     { value: "products", name: "Товары" },
     { value: "types", name: "Категории" },
@@ -27,7 +25,7 @@ const Admin = observer(() => {
   return (
     <div className={cls.admin}>
       <div className={cls.menu}>
-        {isMobile && (
+        {!useScreenSize().isSm && (
           <Select
             selected={currentManagement}
             setSelected={setCurrentManagement}

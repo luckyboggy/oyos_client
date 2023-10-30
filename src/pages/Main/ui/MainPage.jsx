@@ -1,6 +1,5 @@
 import React from "react";
 import { Text } from "shared/ui/text/Text";
-import { CustomCarousel } from "shared/ui/carousel2/CustomCaroousel.jsx";
 import cls from "./MainPage.module.scss";
 
 import mainImg01 from "shared/assets/img/png/main/Main01.png";

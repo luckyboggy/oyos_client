@@ -18,10 +18,21 @@ export const DELIVERY_ROUTE = "delivery";
 export const NOPAGE_ROUTE = "*";
 
 export const orderStatus = {
-    issued: "оформлен",
-    inProcess: "в обработке",
-    delivery: "в доставке",
-    delivered: "доставлен",
-    received: "получен",
-    canceled: "отменен",
-  };
+  issued: "оформлен",
+  inProcess: "в обработке",
+  delivery: "в доставке",
+  delivered: "доставлен",
+  received: "получен",
+  canceled: "отменен",
+};
+
+//breakpoints
+export const SCREEN = {
+  SM: 576,
+  MD: 768,
+  LG: 992,
+  XL: 1200,
+  XXL: 1400
+}
+
+
