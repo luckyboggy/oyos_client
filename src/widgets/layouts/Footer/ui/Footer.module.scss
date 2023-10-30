@@ -1,24 +1,34 @@
+@import "app/style/breakpoint.scss";
+
 .footer {
   color: var(--primary-color);
-  padding: 0 1rem;
+  margin-top: calc(var(--margin-m) * 2);
+  padding: 0 var(--padding-m);
   .wrapper {
+    @include breakpoint(md) {
+      margin: auto;
+      max-width: 600px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--padding-m);
+    }
+
     hr {
-      margin-top: 1rem;
+      margin-top: var(--padding-m);
       border: none;
       height: 1px;
       color: var(--primary-color);
       background-color: var(--primary-color);
     }
     .menu {
-      margin-top: 1rem;
       .items {
         display: flex;
         flex-direction: column;
-        padding: 1rem 0;
+        margin-bottom: calc(2 * var(--margin-m));
         .subMenu {
           display: flex;
           flex-direction: column;
-          padding: 0.5rem 0;
+          padding-bottom: var(--padding-s);
           .item {
             padding: 0.25rem 0;
             text-decoration: none;
@@ -32,19 +42,30 @@
       .links {
         display: flex;
         justify-content: space-evenly;
-        .link {
+        @include breakpoint(md) {
+          flex-direction: column;
+        }
+        .linkIcon {
           padding: 5px;
           height: 45px;
           width: 45px;
           fill: var(--primary-color);
         }
+        .link {
+          text-decoration: none;
+          color: var(--primary-color);
+          font: var(--font-main-s);
+          @include breakpoint(md) {
+            padding: 0.25rem 0;
+          }
+        }
       }
     }
-    .copyright {
-      text-align: center;
-      padding: 10px;
-      font-size: 10px;
-    }
+  }
+  .copyright {
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
   }
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { Link } from "react-router-dom";
 import { ReactComponent as ToVk } from "shared/assets/img/svg/linkVk.svg";
 import { ReactComponent as ToTg } from "shared/assets/img/svg/linkTg.svg";
@@ -38,20 +39,32 @@ const Footer = ({ theme }) => {
         {/* <hr /> */}
         <div className={cls.section}>
           <div className={cls.links}>
-            <Link to="#">
-              <ToVk className={cls.link} />
+            <Link to="#" className={cls.link}>
+              {useScreenSize().isMd ? (
+                <div>Вконтакте</div>
+              ) : (
+                <ToVk className={cls.linkIcon} />
+              )}
             </Link>
-            <Link to="#">
-              <ToTg className={cls.link} />
+            <Link to="#" className={cls.link}>
+              {useScreenSize().isMd ? (
+                <div>Telegram</div>
+              ) : (
+                <ToTg className={cls.linkIcon} />
+              )}
             </Link>
-            <Link to="#">
-              <ToEmail className={cls.link} />
+            <Link to="#" className={cls.link}>
+              {useScreenSize().isMd ? (
+                <div>Почта</div>
+              ) : (
+                <ToEmail className={cls.linkIcon} />
+              )}
             </Link>
           </div>
         </div>
         {/* <hr /> */}
-        <div className={cls.copyright}>© {year} luckyboggy</div>
       </div>
+      <div className={cls.copyright}>© {year} luckyboggy</div>
     </footer>
   );
 };
