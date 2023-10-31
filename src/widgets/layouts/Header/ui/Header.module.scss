@@ -1,15 +1,17 @@
-@import "app/style/breakpoint.scss";
+@import "app/style/variables/breakpoint.scss";
 
 .show {
   transform: translateY(0);
 }
 .hide {
   transform: translateY(-100%);
+  @include breakpoint(lg) {
+    transform: translateY(0);
+  }
 }
 
 .header {
   background: var(--primary-color);
-
   position: fixed;
   top: 0;
   left: 0;

@@ -15,13 +15,17 @@ const Favorites = observer(() => {
       {!user.isAuth && (
         <div className={cls.unauthorized}>
           <ToLogin />
-
         </div>
       )}
 
-
       <div className={cls.favoritesList}>
-        <div className={cls.title}>Вам понравилось</div>
+        {user.favoritesItems.length !== 0 ||
+        user.localFavorites.length !== 0 ? (
+          <div className={cls.title}>Вам понравилось</div>
+        ) : (
+          <div className={cls.title}>Вы пока не нашли своё</div>
+        )}
+
         <FavoritesList />
       </div>
     </div>

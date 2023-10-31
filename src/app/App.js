@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { useLocation } from "react-router-dom";
 import { MobileMenu } from "widgets/MobileMenu";
 import { Context } from "index.js";

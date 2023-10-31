@@ -1,27 +1,4 @@
-@mixin breakpoint($point) {
-  @if $point == sm {
-    // Small tablets and large smartphones (landscape view)
-
-    @media (min-width: 576px) {
-      @content;
-    }
-  } @else if $point == md {
-    // Small tablets (portrait view)
-    @media (min-width: 768px) {
-      @content;
-    }
-  } @else if $point == lg {
-    // Tablets and small desktops
-    @media (min-width: 992px) {
-      @content;
-    }
-  } @else if $point == xl {
-    // Large tablets and desktops
-    @media (min-width: 1200px) {
-      @content;
-    }
-  }
-}
+@import "app/style/variables/breakpoint.scss";
 
 .favoritesList {
   margin-top: 1rem;

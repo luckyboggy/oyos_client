@@ -1,5 +1,15 @@
+@import "app/style/variables/breakpoint.scss";
+
 .shop {
   padding: calc(var(--padding-m) / 2);
+  margin: auto;
+  @include breakpoint(lg) {
+    padding: calc(var(--padding-l) / 2) var(--padding-l);
+  }
+
+  @include breakpoint(xl) {
+    max-width: 1400px;
+  }
 
   .toolbar {
     display: flex;

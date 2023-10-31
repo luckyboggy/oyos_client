@@ -1,6 +1,6 @@
 @import "reset.scss";
 @import "variables/global.scss";
-@import "breakpoint.scss";
+@import "variables/breakpoint.scss";
 
 .app {
   font-family: var(--font-family-main);
@@ -22,18 +22,18 @@
 main {
   .container {
     width: 100%;
-    margin-top: var(--header-height-md);
+    margin-top: var(--header-height);
     position: relative;
-    min-height: var(--container-heighy-md);
-    /* @include breakpoint(md) {
-      max-width: 800px;
+    min-height: var(--container-height);
+    @include breakpoint(md) {
+      //max-width: 800px;
     }
     @include breakpoint(lg) {
-      max-width: 1100px;
+      //max-width: 1100px;
     }
     @include breakpoint(xl) {
-      max-width: 1400px;
-    } */
+      //max-width: 1400px;
+    }
   }
 }
 

@@ -9,7 +9,7 @@
   }
 
   .check {
-    min-height: calc(100vh - var(--header-height-md) - 3 * var(--margin-m));
+    min-height: calc(100vh - var(--header-height) - 3 * var(--margin-m));
     position: relative;
     .title {
       margin-top: var(--margin-m);

@@ -78,7 +78,7 @@ const Shop = observer(() => {
       {/* Модальное окно с напоминанием зарегистрироваться */}
       {user.toLogin && (
         <Modal type={"central"} img={logo} close={toLogin}>
-          <ToLogin close={toLogin}/>
+          <ToLogin close={toLogin} />
           <CustomButton
             fontSize={"s"}
             theme={"inverted"}
@@ -123,8 +123,10 @@ const Shop = observer(() => {
         )}
       </div>
 
-      {/* Сптсок товаров */}
-      {isLoading ? <Preloader /> : <ProductList />}
+      {/* Список товаров */}
+
+        {isLoading ? <Preloader /> : <ProductList />}
+
 
       {/* Пагинация */}
       {product.pageCount > 1 && <Pagination />}

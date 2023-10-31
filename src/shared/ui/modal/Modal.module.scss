@@ -18,10 +18,10 @@
   }
   .lower {
     position: absolute;
-    height: calc(100vh - var(--header-height-md));
+    height: calc(100vh - var(--header-height));
     width: 100%;
     padding: var(--padding-m);
-    bottom: calc(-100vh + var(--header-height-md));
+    bottom: calc(-100vh + var(--header-height));
     transition: 0.2s ease-in-out;
     border-top-left-radius: var(--padding-m);
     border-top-right-radius: var(--padding-m);
