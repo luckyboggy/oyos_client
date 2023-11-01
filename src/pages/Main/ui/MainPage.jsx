@@ -28,18 +28,20 @@ const MainPage = () => {
       <div className={cls.startImg}>
         <img src={mainImg01} alt="main" />
 
-        <Text size={"m"} position={"center"} padding={"pv2"} ff={"font_test"}>
-          <span className={cls.logo}>OLGA YUDINA</span> - женственность,
-          воплощенная в украшениях из <br />
-          премиальных материалов <br /> с нотками винтажного шика
-        </Text>
-        <Text size={"s"} position={"center"} padding={"pv2"}>
-          Украшения бренда - это размышление мастера на тему изысканности
-          повседневного образа. Аксессуары создают настроение сиять, стать
-          чувственной героиней любимого романа и привнести в обычный день
-          ощущение праздника.
-        </Text>
-        <Slider images={sliderImages} isDescription={false} />
+        <div className={cls.content}>
+          <Text size={"m"} position={"center"} padding={"pv2"} ff={"font_test"}>
+            <span className={cls.logo}>OLGA YUDINA</span> - женственность,
+            воплощенная в украшениях из <br />
+            премиальных материалов <br /> с нотками винтажного шика
+          </Text>
+          <Text size={"s"} position={"center"} padding={"pv2"}>
+            Украшения бренда - это размышление мастера на тему изысканности
+            повседневного образа. Аксессуары создают настроение сиять, стать
+            чувственной героиней любимого романа и привнести в обычный день
+            ощущение праздника.
+          </Text>
+          <Slider images={sliderImages} isDescription={false} />
+        </div>
       </div>
     </div>
   );

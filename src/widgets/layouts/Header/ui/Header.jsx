@@ -40,21 +40,28 @@ const Header = observer(
     return (
       <header className={headerClass}>
         <div className={cls.wrapper}>
-          <div className={cls.burger}>
-            <Burger
-              className={cls.burgerIcon}
-              onClick={() => setMobileMenu(true)}
-            />
-          </div>
-          <div className={cls.naviBar}></div>
+          {useScreenSize().isMd ? (
+            <div className={cls.naviBar}>
+              <Link to="shop" className={cls.naviLink}>
+                Магазин
+              </Link>
+              <Link to="workshops" className={cls.naviLink}>
+                Мастер-классы
+              </Link>
+            </div>
+          ) : (
+            <div className={cls.burger}>
+              <Burger
+                className={cls.burgerIcon}
+                onClick={() => setMobileMenu(true)}
+              />
+            </div>
+          )}
+
           <div className={cls.logo}>
             <Link to="">OLGA YUDINA</Link>
           </div>
-          <div className={cls.naviBar}>
-            <Link to="shop">collection</Link>
-            <Link to="about">about</Link>
-            <Link to="delivery">delivery</Link>
-          </div>
+
           <div className={cls.icons}>
             {useScreenSize().isLg && (
               <Search

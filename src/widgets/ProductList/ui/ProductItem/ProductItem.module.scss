@@ -17,11 +17,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
       .prodictLike {
         width: 22px;
         height: 22px;
         fill: transparent;
         stroke: var(--secondary-color);
+        /* :hover {
+          transform: scale(1.5);
+          cursor: pointer;
+        } */
       }
       .liked {
         fill: var(--secondary-color);

@@ -1,3 +1,5 @@
+@import "app/style/variables/breakpoint.scss";
+
 .slider {
   width: 100%;
   overflow: hidden;
@@ -18,10 +20,18 @@
         margin: 0 var(--margin-m) 0 0;
         position: relative;
         overflow: hidden;
-        border-radius: 5px;
         text-decoration: none;
         &:first-child {
           margin: 0 var(--margin-m) 0 var(--margin-m);
+        }
+        @include breakpoint(md) {
+          min-width: auto;
+          width: calc((100% - 3 * var(--margin-m)) / 5);
+        }
+
+        @include breakpoint(xl) {
+          min-width: auto;
+          width: calc((1400px - 3 * var(--margin-m)) / 5);
         }
 
         .content {
@@ -45,6 +55,7 @@
           height: 100%;
           display: block;
           object-fit: cover;
+          border-radius: 5px;
         }
       }
     }

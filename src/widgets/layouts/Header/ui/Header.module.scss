@@ -46,6 +46,19 @@
     }
   }
 
+  .naviBar {
+    flex-basis: 20%;
+    display: flex;
+    @include breakpoint(lg) {
+      flex-basis: 30%;
+    }
+    .naviLink {
+      font: var(--font-main-s);
+      cursor: pointer;
+      margin-right: var(--margin-l);
+    }
+  }
+
   .logo {
     flex-basis: 60%;
     font-size: 18px;
@@ -53,28 +66,36 @@
     font-family: var(--font-family-logo);
     letter-spacing: 0.5px;
     @include breakpoint(lg) {
+      flex-basis: 40%;
       font-size: 22px;
       letter-spacing: 1px;
     }
   }
 
-  .naviBar {
-    display: none;
-  }
   .icons {
     flex-basis: 20%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @include breakpoint(md) {
+      justify-content: end;
+    }
+    @include breakpoint(lg) {
+      flex-basis: 30%;
+    }
   }
 
   .link {
     height: 22px;
     width: 22px;
     fill: var(--secondary-color);
+    @include breakpoint(md) {
+      margin-left: var(--margin-l);
+    }
     @include breakpoint(lg) {
       height: 24px;
       width: 24px;
+      margin-left: calc(2 * var(--margin-m));
     }
   }
 

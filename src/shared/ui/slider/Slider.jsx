@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "index.js";
 import { fetchTypes } from "http/productAPI.js";
-import cls from "./Slider.module.scss";
 import { PhotoLoader } from "shared/ui/photoLoader/PhotoLoader";
+import cls from "./Slider.module.scss";
 
 const Slider = ({ images, isDescription }) => {
   const { product } = useContext(Context);
