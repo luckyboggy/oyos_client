@@ -10,7 +10,13 @@
   }
   .content {
     margin: auto;
+    @include breakpoint(lg) {
+      max-width: 1000px;
+    }
     @include breakpoint(xl) {
+      max-width: 1200px;
+    }
+    @include breakpoint(xxl) {
       max-width: 1400px;
     }
   }

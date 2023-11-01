@@ -1,12 +1,23 @@
+@import "app/style/variables/breakpoint.scss";
+
 .product {
+  margin: auto;
+  @include breakpoint(lg) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+  }
+  @include breakpoint(lg) {
+    padding: calc(var(--padding-l) / 2) var(--padding-l);
+    max-width: 1000px;
+  }
+  @include breakpoint(xl) {
+    max-width: 1200px;
+  }
   //padding: var(--padding-m);
-  .product__img {
-    width: 100%;
-    //height: 300px;
-    //background-color: #ffe4c4;
-    img {
-      width: 100%;
-    }
+  .productImg {
+    //width: 100%;
+    overflow:hidden
   }
 
   .content {

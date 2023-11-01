@@ -67,101 +67,100 @@ const Product = observer(() => {
 
   return (
     <div className={cls.product}>
-      <div>
-        {/* изображения */}
+      {/* изображения */}
+      <div className={cls.productImg}>
         {item.img && (
           <CustomCarousel
             url={process.env.REACT_APP_API_URL}
             images={item.img}
           />
         )}
+      </div>
 
-        {/* описание */}
-        <div className={cls.content}>
-          <div className={cls.titleWrapper}>
-            <div className={cls.title}>{item.name}</div>
-            <div
-              className={cls.like}
-              onClick={(event) => {
-                toggleFavorite(event, item.id, favorite);
-              }}
-            >
-              <Like
-                className={`${cls.prodictLike} ${favorite ? cls.liked : ""}`}
-              />
-            </div>
+      {/* описание */}
+      <div className={cls.content}>
+        <div className={cls.titleWrapper}>
+          <div className={cls.title}>{item.name}</div>
+          <div
+            className={cls.like}
+            onClick={(event) => {
+              toggleFavorite(event, item.id, favorite);
+            }}
+          >
+            <Like
+              className={`${cls.prodictLike} ${favorite ? cls.liked : ""}`}
+            />
           </div>
-          <div className={cls.price}>
-            {item.price && item.price.toLocaleString()} р
-          </div>
-          <div className={cls.description}>{item.description}</div>
-          <div className={cls.materials}></div>
-
-          {/* Размеры */}
-          {item.productSize && !(item.productSize[0].size === "unified") && (
-            <div className={cls.sizes}>
-              <Text size={"s"} position={"left"}>
-                Размеры
-              </Text>
-              <div className={cls.selectSize}>
-                {item.productSize
-                  .sort((a, b) => a.size - b.size)
-                  .map((size) => (
-                    <div
-                      key={size.size}
-                      className={`${cls.sizeItem} ${
-                        size.size === selectedSize ? cls.selectesSize : ""
-                      } ${size.quantity > 0 ? "" : cls.notAvailable}`}
-                      onClick={() => toggleSize(size)}
-                    >
-                      {size.size}
-                    </div>
-                  ))}
-              </div>
-            </div>
-          )}
         </div>
+        <div className={cls.price}>
+          {item.price && item.price.toLocaleString()} р
+        </div>
+        <div className={cls.description}>{item.description}</div>
+        <div className={cls.materials}></div>
 
-        {/* кнопки */}
-        <div className={`${cls.btns} ${btnsShow ? "" : cls.hide}`}>
-          {isOneSize ? (
-            <CustomButton
-              fontSize={"s"}
-              theme={isInBasket(item.id, selectedSize) ? "inverted" : ""}
-              onClick={() => {
+        {/* Размеры */}
+        {item.productSize && !(item.productSize[0].size === "unified") && (
+          <div className={cls.sizes}>
+            <Text size={"s"} position={"left"}>
+              Размеры
+            </Text>
+            <div className={cls.selectSize}>
+              {item.productSize
+                .sort((a, b) => a.size - b.size)
+                .map((size) => (
+                  <div
+                    key={size.size}
+                    className={`${cls.sizeItem} ${
+                      size.size === selectedSize ? cls.selectesSize : ""
+                    } ${size.quantity > 0 ? "" : cls.notAvailable}`}
+                    onClick={() => toggleSize(size)}
+                  >
+                    {size.size}
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* кнопки */}
+      <div className={`${cls.btns} ${btnsShow ? "" : cls.hide}`}>
+        {isOneSize ? (
+          <CustomButton
+            fontSize={"s"}
+            theme={isInBasket(item.id, selectedSize) ? "inverted" : ""}
+            onClick={() => {
+              isInBasket(item.id, selectedSize)
+                ? navigate("../" + BASKET_ROUTE)
+                : handleAddToBasket(item.id, selectedSize);
+            }}
+          >
+            {isInBasket(item.id, selectedSize)
+              ? "оформить"
+              : "добавить в корзину"}
+          </CustomButton>
+        ) : (
+          <CustomButton
+            fontSize={"s"}
+            theme={
+              sizeChosen || isInBasket(item.id, selectedSize) ? "inverted" : ""
+            }
+            onClick={() => {
+              if (!sizeChosen) {
                 isInBasket(item.id, selectedSize)
                   ? navigate("../" + BASKET_ROUTE)
                   : handleAddToBasket(item.id, selectedSize);
-              }}
-            >
-              {isInBasket(item.id, selectedSize)
-                ? "оформить"
-                : "добавить в корзину"}
-            </CustomButton>
-          ) : (
-            <CustomButton
-              fontSize={"s"}
-              theme={
-                sizeChosen || isInBasket(item.id, selectedSize)
-                  ? "inverted"
-                  : ""
               }
-              onClick={() => {
-                if (!sizeChosen) {
-                  isInBasket(item.id, selectedSize)
-                    ? navigate("../" + BASKET_ROUTE)
-                    : handleAddToBasket(item.id, selectedSize);
-                }
-              }}
-            >
-              {sizeChosen
-                ? "выберите размер"
-                : isInBasket(item.id, selectedSize)
-                ? "оформить"
-                : "добавить в корзину"}
-            </CustomButton>
-          )}
-          {/* <CustomButton
+            }}
+          >
+            {sizeChosen
+              ? "выберите размер"
+              : isInBasket(item.id, selectedSize)
+              ? "оформить"
+              : "добавить в корзину"}
+          </CustomButton>
+        )}
+        {/* <CustomButton
             fontSize={"m"}
             //theme={inBasket ? "inverted" : ""}
             onClick={() => {
@@ -180,7 +179,6 @@ const Product = observer(() => {
               ? "оформить"
               : "добавить в корзину"}
           </CustomButton> */}
-        </div>
       </div>
     </div>
   );
