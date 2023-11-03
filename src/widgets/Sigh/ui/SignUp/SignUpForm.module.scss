@@ -1,11 +1,21 @@
+@import "app/style/variables/breakpoint.scss";
+
 .signUnForm {
   position: relative;
   min-height: calc(100vh - var(--header-height) - 3 * var(--margin-m) - 26px);
   width: 100%;
+  @include breakpoint(lg) {
+    min-height: auto;
+  }
 
   .btns {
     width: 100%;
     position: absolute;
     bottom: 0;
+    @include breakpoint(lg) {
+      position: relative;
+      bottom: auto;
+      margin-top: 3rem;
+    }
   }
 }

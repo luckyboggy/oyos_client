@@ -6,7 +6,7 @@ import classes from "./CustomCarousel.module.scss";
 const CustomCarousel = ({ images, url }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
-  const isMobil = useScreenSize().isSm;
+  const isDesktop = useScreenSize().isMd;
 
   const plusIndex = (n) => {
     if (currentIndex + n < 0) {
@@ -67,12 +67,12 @@ const CustomCarousel = ({ images, url }) => {
             ))}
           </div>
         </div>
-        {currentIndex > 0 && !isMobil && (
+        {currentIndex > 0 && isDesktop && (
           <div className={classes.prev} onClick={() => plusIndex(-1)}>
             <Prev className={classes.prevArrow} />
           </div>
         )}
-        {currentIndex < images.length - 1 && !isMobil && (
+        {currentIndex < images.length - 1 && isDesktop && (
           <div className={classes.next} onClick={() => plusIndex(1)}>
             <Prev className={classes.nextArrow} />
           </div>

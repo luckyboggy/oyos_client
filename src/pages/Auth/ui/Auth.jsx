@@ -45,34 +45,36 @@ const Auth = observer(() => {
 
   return (
     <div className={cls.auth}>
-      <div className={cls.choose}>
-        <Link
-          className={`${cls.chooseBtn} ${isLogin ? cls.chooseActive : ""}`}
-          to={"../" + LOGIN_ROUTE}
-        >
-          вход
-        </Link>
-        <Link
-          className={`${cls.chooseBtn} ${isLogin ? "" : cls.chooseActive}`}
-          to={"../" + REGISTRATION_ROUTE}
-        >
-          регистрация
-        </Link>
-      </div>
-      <div className={cls.authForm}>
-        {isLogin ? (
-          <SignInForm
-            authUser={authUser}
-            setAuthUser={setAuthUser}
-            signClick={signClick}
-          />
-        ) : (
-          <SignUpForm
-            authUser={authUser}
-            setAuthUser={setAuthUser}
-            signClick={signClick}
-          />
-        )}
+      <div className={cls.wrapper}>
+        <div className={cls.choose}>
+          <Link
+            className={`${cls.chooseBtn} ${isLogin ? cls.chooseActive : ""}`}
+            to={"../" + LOGIN_ROUTE}
+          >
+            вход
+          </Link>
+          <Link
+            className={`${cls.chooseBtn} ${isLogin ? "" : cls.chooseActive}`}
+            to={"../" + REGISTRATION_ROUTE}
+          >
+            регистрация
+          </Link>
+        </div>
+        <div className={cls.authForm}>
+          {isLogin ? (
+            <SignInForm
+              authUser={authUser}
+              setAuthUser={setAuthUser}
+              signClick={signClick}
+            />
+          ) : (
+            <SignUpForm
+              authUser={authUser}
+              setAuthUser={setAuthUser}
+              signClick={signClick}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
