@@ -6,6 +6,10 @@
   color: var(--secondary-color);
   border: none;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--primary-hover-color);
+  }
 }
 
 .s {

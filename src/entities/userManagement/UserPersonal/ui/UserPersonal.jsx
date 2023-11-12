@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { LOGIN_ROUTE } from "app/utils/consts";
 import { change } from "http/userAPI";
 import { CustomButton } from "shared/ui/button/CustomButton";
-import { CustomInput } from "shared/ui/input/CustomInput";
 import { observer } from "mobx-react-lite";
 import cls from "./UserPersonal.module.scss";
+import { PersonalData } from "widgets/Personal/PersonalData";
 
 const UserPersonal = observer(() => {
   const { user } = useContext(Context);
@@ -42,30 +42,10 @@ const UserPersonal = observer(() => {
 
   return (
     <div className={cls.personal}>
-      <CustomInput type="email" size={"m"} value={user.user.email} readonly />
-      <CustomInput
-        type="text"
-        placeholder={user.user.name ? user.user.name : "Имя"}
-        size={"m"}
-        value={newPersonal.name}
-        onChange={(event) =>
-          setNewPersonal({ ...newPersonal, name: event.target.value })
-        }
-      />
-      <CustomInput
-        type="text"
-        placeholder={user.user.surename ? user.user.surename : "Фамилия"}
-        size={"m"}
-        value={newPersonal.surename}
-        onChange={(event) =>
-          setNewPersonal({ ...newPersonal, surename: event.target.value })
-        }
-      />
-      <CustomInput
-        type="date"
-        placeholder="Дата рождения"
-        size={"m"}
-        //value={}
+      <PersonalData
+        user={user}
+        personal={newPersonal}
+        setPersonal={setNewPersonal}
       />
 
       <div className={cls.btns}>

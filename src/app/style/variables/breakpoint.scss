@@ -1,7 +1,6 @@
 @mixin breakpoint($point) {
   @if $point == sm {
     // Small tablets and large smartphones (landscape view)
-
     @media (min-width: 576px) {
       @content;
     }
@@ -18,6 +17,12 @@
   } @else if $point == xl {
     // Large tablets and desktops
     @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  @else if $point == xxl {
+    // Large tablets and desktops
+    @media (min-width: 1400px) {
       @content;
     }
   }

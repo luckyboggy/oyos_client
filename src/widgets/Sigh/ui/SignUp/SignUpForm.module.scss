@@ -12,10 +12,10 @@
     width: 100%;
     position: absolute;
     bottom: 0;
-    @include breakpoint(lg) {
+    @include breakpoint(md) {
       position: relative;
       bottom: auto;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
   }
 }

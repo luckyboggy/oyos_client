@@ -1,5 +1,9 @@
+@import "app/style/variables/breakpoint.scss";
+
 .personal {
-  min-height: calc(100vh - var(--header-height-md) - 43px - 4rem);
+  min-height: calc(
+    100vh - var(--header-height) - var(--select-height) - 4 * var(--padding-m)
+  );
   position: relative;
   .btns {
     width: 100%;

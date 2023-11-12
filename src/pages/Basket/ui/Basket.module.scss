@@ -1,5 +1,15 @@
+@import "app/style/variables/breakpoint.scss";
+
 .basket {
   padding: var(--padding-m);
+  margin: auto;
+  @include breakpoint(lg) {
+    padding: calc(var(--padding-l) / 2) var(--padding-l);
+    max-width: 800px;
+  }
+  @include breakpoint(xl) {
+    max-width: 800px;
+  }
   .empty {
     margin-top: var(--margin-m);
     margin-bottom: calc(2 * var(--margin-m));
@@ -30,8 +40,50 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-
       .order {
+      }
+    }
+  }
+
+  .details {
+    .detailsWrapper {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: var(--margin-m);
+      .ordering {
+      }
+      .total {
+        .links {
+          width: 100%;
+
+          .link {
+            display: inline-block;
+            color: var(--font-color);
+            font: var(--font-main-s);
+            margin-bottom: var(--margin-s);
+            cursor: pointer;
+            &:hover {
+              color: var(--primary-color);
+              text-decoration: none;
+            }
+          }
+          a {
+            text-decoration: none;
+            border-bottom: 1px solid var(--font-color);
+            transition: border-color 0.25s;
+            &:hover {
+              color: var(--primary-color);
+              text-decoration: none;
+              border-bottom: 1px solid transparent;
+            }
+          }
+        }
+        .totalPrice {
+          display: flex;
+          justify-content: space-between;
+          font: var(--font-main-m);
+          margin: var(--margin-m) 0;
+        }
       }
     }
   }

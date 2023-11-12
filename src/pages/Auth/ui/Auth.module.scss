@@ -2,12 +2,17 @@
 .auth {
   padding: var(--padding-m);
   min-height: calc(100vh - var(--header-height));
-  @include breakpoint(lg) {
+  @include breakpoint(md) {
     margin: auto;
     max-width: 400px;
   }
   .wrapper {
-    margin-top: 30%;
+    @include breakpoint(md) {
+      margin-top: 20%;
+    }
+    @include breakpoint(xxl) {
+      margin-top: 30%;
+    }
 
     .choose {
       display: flex;

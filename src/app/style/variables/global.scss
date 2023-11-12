@@ -31,6 +31,7 @@
 
   //--primary-color: lightslategrey;
   --primary-color: rgb(39, 39, 39);
+  --primary-hover-color: rgb(83, 83, 83);
   //--secondary-color: #ffe4c4;
   --secondary-color: white;
 
@@ -45,6 +46,7 @@
   --header-height: 42px;
   --footer-height: 303px;
   --container-height: calc(100vh - 42px - 303px);
+  --select-height: 43px;
 
   @include breakpoint(md) {
     --footer-heigth: 253px;
