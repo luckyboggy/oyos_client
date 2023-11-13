@@ -9,6 +9,8 @@ import {
 } from "shared/lib/functions/autocompleteFunctions.js";
 import cls from "./Ordering.module.scss";
 import { handleFromBasketToOrder } from "shared/lib/functions/orderFunctions";
+import { PersonalData } from "widgets/Personal/PersonalData";
+import { PersonalAddress } from "widgets/Personal/PersonalAddress/ui/PersonalAddress";
 
 const Ordering = () => {
   const { user } = useContext(Context);
@@ -44,29 +46,10 @@ const Ordering = () => {
     <div className={cls.ordering}>
       {user.isAuth ? (
         <div className={cls.personal}>
-          <CustomInput
-            type="email"
-            size={"m"}
-            value={user.user.email}
-            readonly
-          />
-          <CustomInput
-            type="text"
-            placeholder={user.user.name ? user.user.name : "Имя"}
-            size={"m"}
-            value={newPersonal.name}
-            onChange={(event) =>
-              setNewPersonal({ ...newPersonal, name: event.target.value })
-            }
-          />
-          <CustomInput
-            type="text"
-            placeholder={user.user.surename ? user.user.surename : "Фамилия"}
-            size={"m"}
-            value={newPersonal.surename}
-            onChange={(event) =>
-              setNewPersonal({ ...newPersonal, surename: event.target.value })
-            }
+          <PersonalData
+            user={user}
+            personal={newPersonal}
+            setPersonal={setNewPersonal}
           />
         </div>
       ) : (
@@ -75,48 +58,10 @@ const Ordering = () => {
 
       <div className={cls.delivery}>
         <div className="fs20">Доставка</div>
-
-        {/* выбор города */}
-        <CustomInput
-          type="text"
-          placeholder={"Город"}
-          size={"m"}
-          value={customerAddress.city}
-          onChange={(event) =>
-            setCustomerAddress({ ...customerAddress, name: event.target.value })
-          }
+        <PersonalAddress
+          address={customerAddress}
+          setAddress={setCustomerAddress}
         />
-
-        {/* выбор улицы */}
-        <CustomInput
-          type="text"
-          placeholder={"Улица"}
-          size={"m"}
-          value={customerAddress.street}
-          onChange={(event) =>
-            setCustomerAddress({ ...customerAddress, street: event.target.value })
-          }
-        />
-        <div className={cls.houseFlat}>
-          <CustomInput
-            type="text"
-            placeholder={"Дом"}
-            size={"m"}
-            value={customerAddress.house}
-            onChange={(event) =>
-              setCustomerAddress({ ...customerAddress, house: event.target.value })
-            }
-          />
-          <CustomInput
-            type="text"
-            placeholder={"Картира"}
-            size={"m"}
-            value={customerAddress.flat}
-            onChange={(event) =>
-              setCustomerAddress({ ...customerAddress, flat: event.target.value })
-            }
-          />
-        </div>
       </div>
 
       {/* Вариант с автозаполнением (не окончен) */}

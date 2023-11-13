@@ -4,7 +4,7 @@ import cls from "./PersonalData.module.scss";
 
 export const PersonalData = ({ user, personal, setPersonal }) => {
   return (
-    <div className={cls.PersonalData}>
+    <div className={cls.personalData}>
       <CustomInput type="email" size={"m"} value={user.user.email} readonly />
       <CustomInput
         type="text"
@@ -12,7 +12,7 @@ export const PersonalData = ({ user, personal, setPersonal }) => {
         size={"m"}
         value={personal.name}
         onChange={(event) =>
-            setPersonal({ ...personal, name: event.target.value })
+          setPersonal({ ...personal, name: event.target.value })
         }
       />
       <CustomInput
@@ -21,7 +21,7 @@ export const PersonalData = ({ user, personal, setPersonal }) => {
         size={"m"}
         value={personal.surename}
         onChange={(event) =>
-            setPersonal({ ...personal, surename: event.target.value })
+          setPersonal({ ...personal, surename: event.target.value })
         }
       />
       <CustomInput
