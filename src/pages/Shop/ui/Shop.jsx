@@ -10,8 +10,8 @@ import { Pagination } from "shared/ui/search/pagination/Pagination.jsx";
 import { ToLogin } from "widgets/ToLogin/ui/ToLogin";
 import { CustomButton } from "shared/ui/button/CustomButton.jsx";
 import { Modal } from "shared/ui/modal/Modal";
-import cls from "./Shop.module.scss";
 import { Preloader } from "shared/ui/preloader/Preloader";
+import cls from "./Shop.module.scss";
 
 import logo from "shared/assets/img/png/logo.png";
 

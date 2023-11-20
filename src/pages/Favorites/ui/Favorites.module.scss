@@ -1,6 +1,35 @@
+@import "app/style/variables/breakpoint.scss";
+
 .favorites {
   padding: var(--padding-m);
+  margin: auto;
+  @include breakpoint(lg) {
+    padding: calc(var(--padding-l) / 2) var(--padding-l);
+    max-width: 800px;
+  }
+  @include breakpoint(xl) {
+    max-width: 800px;
+  }
   .unauthorized {
+    .toAuth {
+      margin-bottom: calc(2 * var(--margin-m));
+
+      .link {
+        text-decoration: none;
+        color: var(--font-color);
+        border-bottom: 1px solid var(--font-color);
+        &:hover {
+          color: var(--primary-color);
+          border-bottom: 1px solid transparent;
+        }
+      }
+      .logo {
+        .logoImg {
+          margin-left: calc(50% - 50px);
+          width: 100px;
+        }
+      }
+    }
   }
   .favoritesList {
     .title {

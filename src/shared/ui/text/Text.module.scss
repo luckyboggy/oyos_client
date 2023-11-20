@@ -2,6 +2,7 @@
   color: var(--font-color);
 }
 
+
 .s {
   font: var(--font-main-s);
 }
@@ -16,7 +17,8 @@
 }
 
 .center {
-  justify-content: center;
+  //justify-content: center;
+  margin: auto;
   text-align: center;
 }
 
