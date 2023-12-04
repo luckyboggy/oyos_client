@@ -1,0 +1,47 @@
+@import "app/style/variables/breakpoint.scss";
+
+.searchInput {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+  .search {
+    padding: 3px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    box-sizing: border-box;
+    color: var(--secondary-color);
+    outline: none;
+    transition: 0.5s;
+  }
+  .searchIcon {
+    height: 26px;
+    width: 26px;
+    fill: var(--secondary-color);
+
+    position: absolute;
+    top: calc(50% - 12px);
+    //right: 15px;
+    //transform: translate(-50%,-50%);
+    //font-size: 26px;
+    color: var(--secondary-color);
+    transition: 0.2s;
+  }
+}
+.searchInput:hover {
+  input {
+    border: 1px solid var(--secondary-color);
+    width: 100%;
+    background: #3b3640;
+    border-radius: 5px;
+    padding: 0 1rem;
+  }
+
+  .searchIcon {
+    opacity: 0;
+    z-index: -1;
+  }
+}

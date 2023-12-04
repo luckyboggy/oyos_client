@@ -6,7 +6,7 @@ import { ReactComponent as Close } from "shared/assets/img/svg/close.svg";
 import { Context } from "index.js";
 import { observer } from "mobx-react-lite";
 import { fetchTypes, fetchProducts } from "http/productAPI.js";
-import { Pagination } from "shared/ui/search/pagination/Pagination.jsx";
+import { Pagination } from "shared/ui/pagination/Pagination.jsx";
 import { ToLogin } from "widgets/ToLogin/ui/ToLogin";
 import { CustomButton } from "shared/ui/button/CustomButton.jsx";
 import { Modal } from "shared/ui/modal/Modal";

@@ -7,9 +7,8 @@ import {
 } from "shared/lib/functions/favoritesFunctions.js";
 import { ReactComponent as Like } from "shared/assets/img/svg/like.svg";
 import { observer } from "mobx-react-lite";
-import cls from "./ProductItem.module.scss";
 import { PhotoLoader } from "shared/ui/photoLoader/PhotoLoader";
-
+import cls from "./ProductItem.module.scss";
 
 const ProductItem = observer(({ item }) => {
 
@@ -43,7 +42,6 @@ const ProductItem = observer(({ item }) => {
         <div
           className={cls.like}
           onClick={(event) => {
- 
             toggleFavorite(event, id, favorite);
           }}
         >

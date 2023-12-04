@@ -4,8 +4,14 @@
     position: relative;
     .productImg {
       width: 100%;
+      overflow: hidden;
       img {
         width: 100%;
+        display: block;
+        transition: transform 0.5s;
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
     .like {
@@ -23,10 +29,10 @@
         height: 22px;
         fill: transparent;
         stroke: var(--secondary-color);
-        /* :hover {
-          transform: scale(1.5);
+        :hover {
+          //transform: scale(1.5);
           cursor: pointer;
-        } */
+        }
       }
       .liked {
         fill: var(--secondary-color);

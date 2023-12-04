@@ -9,6 +9,7 @@ import { ReactComponent as Search } from "shared/assets/img/svg/search.svg";
 import { Context } from "index.js";
 import { observer } from "mobx-react-lite";
 import cls from "./Header.module.scss";
+import { SearchInput } from "shared/ui/search";
 
 const Header = observer(
   ({ setMobileMenu, setMobilSearch, mobilSearch, theme }) => {
@@ -64,10 +65,7 @@ const Header = observer(
 
           <div className={cls.icons}>
             {useScreenSize().isLg && (
-              <Search
-                className={cls.link}
-                onClick={() => setMobilSearch(!mobilSearch)}
-              />
+              <SearchInput/>
             )}
 
             <Link to="favorites" className={cls.link}>
