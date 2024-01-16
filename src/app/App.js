@@ -19,7 +19,7 @@ const App = observer(() => {
 
   const [loading, setLoading] = useState(true);
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [mobilSearch, setMobilSearch] = useState(false);
+  const [search, setSearch] = useState(false);
   const [headerTheme, setHeaderTheme] = useState("");
   const [footerTheme, setFooterTheme] = useState("");
 
@@ -89,11 +89,11 @@ const App = observer(() => {
       <MobileMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
       <Header
         setMobileMenu={setMobileMenu}
-        setMobilSearch={setMobilSearch}
-        mobilSearch={mobilSearch}
+        setSearch={setSearch}
+        search={search}
         theme={headerTheme}
       />
-      {mobilSearch && <MobilSearch setMobilSearch={setMobilSearch} />}
+      {search && <MobilSearch setMobilSearch={setSearch} />}
       <AppRouter user={user} />
 
       <Footer theme={footerTheme} />

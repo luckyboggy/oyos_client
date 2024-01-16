@@ -12,7 +12,7 @@ import cls from "./Header.module.scss";
 import { SearchInput } from "shared/ui/search";
 
 const Header = observer(
-  ({ setMobileMenu, setMobilSearch, mobilSearch, theme }) => {
+  ({ setMobileMenu, setSearch, search, theme }) => {
     const { user } = useContext(Context);
 
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);

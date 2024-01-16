@@ -30,9 +30,12 @@
     color: var(--secondary-color);
     transition: 0.2s;
   }
+  .overlay {
+    display: none;
+  }
 }
-.searchInput:hover {
-  input {
+.searching {
+  .search {
     border: 1px solid var(--secondary-color);
     width: 100%;
     background: #3b3640;
@@ -44,4 +47,14 @@
     opacity: 0;
     z-index: -1;
   }
+
+
+}
+.overlay {
+  display: flex;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: re;
 }

@@ -13,6 +13,7 @@ export class UserStore {
     this._favoritesItems = [];
     this._orderItems = [];
     this._toLogin = false;
+    this._searching = false;
     //local basket
     this._localBasket = [];
     this._localFavorites = [];
@@ -41,6 +42,9 @@ export class UserStore {
   }
   setToLogin(state) {
     this._toLogin = state;
+  }
+  setSearching(state) {
+    this._searching = state;
   }
 
   // favorite
@@ -118,6 +122,9 @@ export class UserStore {
   }
   get toLogin() {
     return this._toLogin;
+  }
+  get searching() {
+    return this._searching;
   }
   get localBasket() {
     return this._localBasket;
