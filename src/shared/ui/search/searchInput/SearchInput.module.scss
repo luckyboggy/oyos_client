@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   justify-content: end;
+  z-index: 150;
   cursor: pointer;
   .search {
     padding: 3px;
@@ -30,9 +31,6 @@
     color: var(--secondary-color);
     transition: 0.2s;
   }
-  .overlay {
-    display: none;
-  }
 }
 .searching {
   .search {
@@ -47,8 +45,6 @@
     opacity: 0;
     z-index: -1;
   }
-
-
 }
 .overlay {
   display: flex;
@@ -56,5 +52,5 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: re;
+  background: red;
 }

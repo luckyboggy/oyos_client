@@ -1,0 +1,13 @@
+.search {
+  .overlay {
+    position: fixed;
+
+    //top: var(--header-height);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: var(--opacity-color);
+    z-index: 100;
+  }
+}
