@@ -39,7 +39,7 @@
 
   --font-color: #363e46;
 
-  --opacity-color: #00000060;
+  --opacity-color: #000000cb;
 
   // heights
 
@@ -53,9 +53,9 @@
     --container-height: calc(100vh - 42px - 253px);
   }
   @include breakpoint(lg) {
-    --header-height: 66px;
+    --header-height: 62px;
     --footer-height: 253px;
-    --container-height: calc(100vh - 66px - 253px);
+    --container-height: calc(100vh - 62px - 253px);
   }
 
   // paddings

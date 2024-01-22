@@ -14,12 +14,24 @@ import { Preloader } from "shared/ui/preloader/Preloader";
 import cls from "./Shop.module.scss";
 
 import logo from "shared/assets/img/png/logo.png";
+import { Select } from "shared/ui/select2/Select";
 
 const Shop = observer(() => {
   const [sort, setSort] = useState(false);
   const [selectedTypesList, setSelectedTypesList] = useState([]);
   const { product, user } = useContext(Context);
   const [isLoading, setIsLoading] = useState(true);
+
+  const sortTypes = [
+   /*  { name: "По умолчанию", value: ["updatedAt", "DESC"] }, */
+    { name: "Новинки", value: ["updatedAt", "DESC"] },
+    { name: "Дешевле", value: ["price", "ASC"] },
+    { name: "Дороже", value: ["price", "DESC"] },
+  ];
+
+  const setSelectedSort = (value) => {
+    product.setSortType(sortTypes.find((type) => type.value === value));
+  };
 
   const toLogin = (state) => {
     user.setToLogin(state);
@@ -106,6 +118,19 @@ const Shop = observer(() => {
         </div>
       </div>
 
+      <div className={cls.toolbar}>
+        <div className={cls.filter}>
+          <Select options={product.types} />
+        </div>
+        <div className={cls.sort}>
+          <Select
+            options={sortTypes}
+            selected={product.sortType.value}
+            setSelected={setSelectedSort}
+          />
+        </div>
+      </div>
+
       {/* Выбранные категории */}
       <div className={cls.selectedTypes}>
         {selectedTypesList.map(
@@ -125,8 +150,7 @@ const Shop = observer(() => {
 
       {/* Список товаров */}
 
-        {isLoading ? <Preloader /> : <ProductList />}
-
+      {isLoading ? <Preloader /> : <ProductList />}
 
       {/* Пагинация */}
       {product.pageCount > 1 && <Pagination />}

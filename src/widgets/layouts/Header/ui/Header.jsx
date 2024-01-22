@@ -8,7 +8,6 @@ import { ReactComponent as Auth } from "shared/assets/img/svg/person.svg";
 import { Context } from "index.js";
 import { observer } from "mobx-react-lite";
 import cls from "./Header.module.scss";
-import { SearchInput } from "shared/ui/search";
 import { Search } from "widgets/Search";
 
 const Header = observer(({ setMobileMenu, theme }) => {
@@ -32,9 +31,9 @@ const Header = observer(({ setMobileMenu, theme }) => {
     };
   }, [prevScrollPosition]);
 
-  const headerClass = `${cls.header} ${cls[theme]} ${
+  const headerClass = `${cls.header} ${cls[theme]}  ${
     isHeaderVisible ? cls.show : cls.hide
-  }  `;
+  }  ${user.searching ? cls.white : ""}`;
 
   return (
     <header className={headerClass}>

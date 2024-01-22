@@ -2,21 +2,15 @@ import React, { useState } from "react";
 import { ReactComponent as Arrow } from "shared/assets/img/svg/arrow.svg";
 import cls from "./Select.module.scss";
 
-const Select = ({ options, selected, setSelected, size, margins }) => {
+const Select = ({ options, selected, setSelected, size }) => {
   const [dropping, setDropping] = useState(false);
 
   return (
     <div className={cls.select}>
-      {/* {dropping && (
-        <div className={cls.opacity} onClick={() => setDropping(!dropping)}>
-          >
-        </div>
-      )} */}
-
       <div className={cls.selectBtn} onClick={() => setDropping(!dropping)}>
         <div className={cls.selected}>
           {selected
-            ? options.find((option) => option.value === selected).name
+            ? options.find((option) => option.value.toString() === selected.toString() ).name
             : ""}
         </div>
         <Arrow className={`${cls.dropArrow} ${dropping ? cls.dropping : ""}`} />

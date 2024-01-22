@@ -1,13 +1,22 @@
 .search {
-  .overlay {
+  .headerBlocker {
     position: fixed;
-
-    //top: var(--header-height);
     top: 0;
     left: 0;
     right: 0;
+    height: var(--header-height);
+    //background-color: white;
+    z-index: 110;
+  }
+  .overlay {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    left: 0;
     height: 100vh;
-    background: var(--opacity-color);
+    background-color: var(--opacity-color);
+
     z-index: 100;
   }
+
 }

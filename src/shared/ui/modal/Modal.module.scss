@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: #00000010;
+  background-color: transparent;
   transition: background-color 0.2s ease-in-out;
   display: flex;
   //align-items: center;
@@ -73,9 +73,12 @@
 }
 
 .lower {
-  background-color: var(--opacity-color);
+  //background-color: var(--opacity-color);
 }
 .central {
   background-color: var(--opacity-color);
   align-items: center;
+}
+.show {
+  background-color: var(--opacity-color);
 }

@@ -144,3 +144,43 @@
   background-color: black;
   transform: translateY(0);
 }
+
+.white {
+  background-color: #fff;
+
+}
+
+.white {
+  background: #fff;
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  .naviBar {
+    .naviLink {
+      color: var(--primary-color);
+    }
+  }
+
+  .logo {
+    color: var(--primary-color);
+  }
+
+  .link {
+    fill: var(--primary-color);
+  }
+
+  .icon {
+    fill: var(--primary-color);
+  }
+  .like {
+    fill: transparent;
+    stroke: var(--primary-color);
+  }
+
+  .basketCount {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+}

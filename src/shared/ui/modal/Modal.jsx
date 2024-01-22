@@ -6,7 +6,7 @@ const Modal = ({ children, type, img, title = "", close }) => {
   const [show, setShow] = useState("");
 
   const handleClose = (event) => {
-    if (event.target.className === `${cl.Modal} ${cl[type]}`) {
+    if (event.target.className === `${cl.Modal} ${cl[type]} ${cl[show]}`) {
       setShow("");
       setTimeout(() => {
         close(false);
@@ -20,7 +20,7 @@ const Modal = ({ children, type, img, title = "", close }) => {
 
   return (
     <div
-      className={`${cl.Modal} ${cl[type]}`}
+      className={`${cl.Modal} ${cl[type]} ${cl[show]}`}
       onClick={(event) => handleClose(event)}
     >
       <div className={`${cl[type]} ${cl[show]}`}>
