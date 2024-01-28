@@ -1,9 +1,21 @@
+@import "app/style/variables/breakpoint.scss";
+
 .admin {
   padding: var(--padding-m);
+  margin: auto;
+  @include breakpoint(lg) {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem;
+    padding: calc(var(--padding-l) / 2) var(--padding-l);
+    max-width: 800px;
+  }
+
+  @include breakpoint(xl) {
+    max-width: 1000px;
+  }
+
   .menu {
-    // display: flex;
-    // justify-content: center;
-    // padding: 0 2rem;
     color: var(--font-color);
     width: 100%;
   }

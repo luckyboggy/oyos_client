@@ -7,6 +7,7 @@ import { UserManagement } from "entities/adminManagements/UserManagement/";
 import { OrderManagement } from "entities/adminManagements/OrderManagement";
 import { PersonalManagement } from "entities/adminManagements/PersonalManagement";
 import { ProductManagement } from "entities/adminManagements/ProductManagement";
+import { SideBar } from "widgets/SideBar/ui/SideBar";
 import { observer } from "mobx-react-lite";
 import { MANAGEMENT } from "app/utils/consts";
 import cls from "./Admin.module.scss";
@@ -17,8 +18,14 @@ const Admin = observer(() => {
   return (
     <div className={cls.admin}>
       <div className={cls.menu}>
-        {!useScreenSize().isSm && (
+        {!useScreenSize().isSm ? (
           <Select
+            selected={currentManagement}
+            setSelected={setCurrentManagement}
+            options={MANAGEMENT}
+          />
+        ) : (
+          <SideBar
             selected={currentManagement}
             setSelected={setCurrentManagement}
             options={MANAGEMENT}
