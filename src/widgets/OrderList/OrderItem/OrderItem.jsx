@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchOrderProducts } from "http/orderProductAPI";
 import { OrderProduct } from "../OrderProduct/OrderProduct";
 import { ReactComponent as Arrow } from "shared/assets/img/svg/arrow.svg";
 import { Modal } from "shared/ui/modal/Modal";
-import { orderStatus } from "app/utils/consts.js";
+import { ORDER_STATUS } from "app/utils/consts.js";
 import { Portal } from "shared/ui/portal/Portal";
 import cls from "./OrderItem.module.scss";
 import { Text } from "shared/ui/text/Text";
@@ -69,7 +69,7 @@ const OrderItem = ({ order }) => {
               order.status === "received") && (
               <div className={cls.cancelConfirm}>
                 <Text size={"m"} padding="pv2">
-                  Заказ № {order.number} {orderStatus[order.status]}. Отмена на данном этапе невозможно.
+                  Заказ № {order.number} {ORDER_STATUS[order.status]}. Отмена на данном этапе невозможно.
                 </Text>
                 <div className={cls.btn}>
 
@@ -94,7 +94,7 @@ const OrderItem = ({ order }) => {
         </div>
         <div className={cls.statusBar}>
           <div>Статус заказа:</div>
-          <div className={cls.status}>{orderStatus[order.status]}</div>
+          <div className={cls.status}>{ORDER_STATUS[order.status]}</div>
         </div>
 
         <div className={cls.orderDate}>

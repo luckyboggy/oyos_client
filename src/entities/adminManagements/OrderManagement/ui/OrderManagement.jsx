@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchOrdersByStatus } from "http/orderAPI";
-import { orderStatus } from "app/utils/consts.js";
+import { ORDER_STATUS } from "app/utils/consts.js";
 import { ReactComponent as Sort } from "shared/assets/img/svg/sort.svg";
 import { CheckBox } from "shared/ui/checkbox/CheckBox";
 import { Modal } from "shared/ui/modal/Modal";
@@ -42,7 +42,7 @@ const OrderManagement = () => {
         <Modal type={"lower"} title={"Статус заказа"} close={setFilters}>
           <div className={cls.filters}>
             <div className={cls.statusSelector}>
-              {Object.entries(orderStatus).map(([key, value], index) => (
+              {Object.entries(ORDER_STATUS).map(([key, value], index) => (
                 <CheckBox
                   key={key}
                   type={"checkbox"}

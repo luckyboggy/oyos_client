@@ -8,18 +8,10 @@ import { OrderManagement } from "entities/adminManagements/OrderManagement";
 import { PersonalManagement } from "entities/adminManagements/PersonalManagement";
 import { ProductManagement } from "entities/adminManagements/ProductManagement";
 import { observer } from "mobx-react-lite";
+import { MANAGEMENT } from "app/utils/consts";
 import cls from "./Admin.module.scss";
 
 const Admin = observer(() => {
-  const management = [
-    { value: "products", name: "Товары" },
-    { value: "types", name: "Категории" },
-    { value: "collections", name: "Коллекции" },
-    { value: "users", name: "Пользователи" },
-    { value: "orders", name: "Заказы" },
-    { value: "personal", name: "Личные данные" },
-  ];
-
   const [currentManagement, setCurrentManagement] = useState("products");
 
   return (
@@ -29,7 +21,7 @@ const Admin = observer(() => {
           <Select
             selected={currentManagement}
             setSelected={setCurrentManagement}
-            options={management}
+            options={MANAGEMENT}
           />
         )}
       </div>

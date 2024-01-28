@@ -59,10 +59,12 @@
         font: var(--font-main-m);
       }
     }
+    
   }
   .selectedTypes {
     display: flex;
     flex-wrap: wrap;
+    cursor: default;
     .selectedType {
       display: inline-block;
       position: relative;
@@ -80,10 +82,14 @@
         width: 16px;
         fill: var(--secondary-color);
         margin-right: 0.5rem;
+        cursor: pointer;
       }
       .typeName {
         font: var(--font-main-s);
       }
+    }
+    @include breakpoint(sm) {
+      margin-top: 1rem;
     }
   }
 }

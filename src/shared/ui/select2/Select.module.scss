@@ -8,7 +8,7 @@
     left: 0;
     min-width: 100vw;
     min-height: 100vh;
-    background: var(--opacity-color);
+    background: transparent;
   }
   .selectBtn {
     width: 100%;
@@ -20,6 +20,7 @@
     background: var(--basic-bg-color);
     //box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid var(--primary-color);
+    cursor: pointer;
   }
   .options {
     top: 110%;
@@ -30,8 +31,21 @@
     box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.1);
     z-index: var(--slelct-z);
     font: var(--font-main-s);
+    cursor: pointer;
     .option {
       padding: 1rem 1rem;
+      
+    }
+    .checkOption {
+      padding: 1rem 0rem;
+      
+      input {
+        margin: 0 1rem;
+        cursor: pointer;
+      }
+      label {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -45,4 +59,22 @@
 }
 .dropping {
   transform: rotate(0deg);
+}
+
+.s {
+  font: var(--font-main-s);
+  .selectBtn {
+    font: var(--font-main-s);
+  }
+  .options {
+    font: var(--font-main-s);
+  }
+}
+
+.m {
+  font: var(--font-main-m);
+}
+
+.l {
+  font: var(--font-main-l);
 }

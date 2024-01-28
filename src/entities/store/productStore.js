@@ -11,7 +11,7 @@ export class ProductStore {
     this._totalCount = 0;
     this._limit = 8;
     this._pageCount = 0;
-    this._sortType = { name: "По умолчанию", value: ["updatedAt", "DESC"] };
+    this._sortType = { name: "Новинки", value: ["updatedAt", "DESC"] };
     makeAutoObservable(this);
   }
 

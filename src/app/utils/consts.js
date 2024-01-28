@@ -17,7 +17,7 @@ export const DELIVERY_ROUTE = "delivery";
 
 export const NOPAGE_ROUTE = "*";
 
-export const orderStatus = {
+export const ORDER_STATUS = {
   issued: "оформлен",
   inProcess: "в обработке",
   delivery: "в доставке",
@@ -26,6 +26,24 @@ export const orderStatus = {
   canceled: "отменен",
 };
 
+export const SORT_TYPES = [
+  { name: "Новинки", value: ["updatedAt", "DESC"] },
+  { name: "Дешевле", value: ["price", "ASC"] },
+  { name: "Дороже", value: ["price", "DESC"] },
+];
+
+export const MANAGEMENT = [
+  { value: "products", name: "Товары" },
+  { value: "types", name: "Категории" },
+  { value: "collections", name: "Коллекции" },
+  { value: "users", name: "Пользователи" },
+  { value: "orders", name: "Заказы" },
+  { value: "personal", name: "Личные данные" },
+];
+
+
+
+//CSS
 //breakpoints
 export const SCREEN = {
   SM: 576,
@@ -34,5 +52,6 @@ export const SCREEN = {
   XL: 1200,
   XXL: 1400
 }
+
 
 

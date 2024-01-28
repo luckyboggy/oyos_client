@@ -1,18 +1,12 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Context } from "index.js";
 import { CheckBox } from "shared/ui/checkbox/CheckBox";
 import { ReactComponent as Arrow } from "shared/assets/img/svg/arrow.svg";
-import cls from "./Filters.module.scss";
 import { CustomButton } from "shared/ui/button/CustomButton";
+import { SORT_TYPES } from "app/utils/consts";
+import cls from "./Filters.module.scss";
 
 const Filters = ({ closeModal }) => {
-  const sortTypes = [
-    { name: "По умолчанию", value: ["updatedAt", "DESC"] },
-    { name: "Новинки", value: ["updatedAt", "DESC"] },
-    { name: "Дешевле", value: ["price", "ASC"] },
-    { name: "Дороже", value: ["price", "DESC"] },
-  ];
-
   const [types, setTypes] = useState(false);
 
   const { product } = useContext(Context);
@@ -30,7 +24,7 @@ const Filters = ({ closeModal }) => {
       <div className={cls.sort}>
         <div className={cls.sortTitle}>Сортировка</div>
         <div className={cls.sortTypes}>
-          {sortTypes.map((sortType) => (
+          {SORT_TYPES.map((sortType) => (
             <CheckBox
               key={sortType.name}
               type={"radio"}

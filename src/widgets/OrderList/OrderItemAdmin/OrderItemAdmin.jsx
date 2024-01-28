@@ -3,7 +3,7 @@ import { fetchOrderProducts } from "http/orderProductAPI";
 import { OrderProduct } from "../OrderProduct/OrderProduct";
 import { CustomSelect } from "shared/ui/select/CustomSelect.jsx";
 import { ReactComponent as Arrow } from "shared/assets/img/svg/arrow.svg";
-import { orderStatus } from "app/utils/consts.js";
+import { ORDER_STATUS } from "app/utils/consts.js";
 import { fetchUser } from "http/userAPI";
 import cls from "./OrderItemAdmin.module.scss";
 import { changeOrderStatus } from "http/orderAPI";
@@ -17,7 +17,7 @@ const OrderItemAdmin = ({ order }) => {
 
   const makeStatusList = () => {
     let statuses = [];
-    Object.entries(orderStatus).map(([key, value]) => {
+    Object.entries(ORDER_STATUS).map(([key, value]) => {
       if (key !== "canceled" && key !== order.status)
         statuses.push({ value: key, name: value });
     });
@@ -61,7 +61,7 @@ const OrderItemAdmin = ({ order }) => {
           <div className={cls.status}>
             <CustomSelect
               options={makeStatusList()}
-              defValue={orderStatus[order.status]}
+              defValue={ORDER_STATUS[order.status]}
               onChange={changeStatus}
             />
           </div>

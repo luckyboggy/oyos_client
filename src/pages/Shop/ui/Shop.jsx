@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { ProductList } from "widgets/ProductList/ui/ProductList/ProductList.jsx";
 import { Filters } from "widgets/Filters/ui/Filters.jsx";
 import { ReactComponent as Sort } from "shared/assets/img/svg/sort.svg";
@@ -11,6 +12,7 @@ import { ToLogin } from "widgets/ToLogin/ui/ToLogin";
 import { CustomButton } from "shared/ui/button/CustomButton.jsx";
 import { Modal } from "shared/ui/modal/Modal";
 import { Preloader } from "shared/ui/preloader/Preloader";
+import { SORT_TYPES } from "app/utils/consts";
 import cls from "./Shop.module.scss";
 
 import logo from "shared/assets/img/png/logo.png";
@@ -22,15 +24,8 @@ const Shop = observer(() => {
   const { product, user } = useContext(Context);
   const [isLoading, setIsLoading] = useState(true);
 
-  const sortTypes = [
-   /*  { name: "По умолчанию", value: ["updatedAt", "DESC"] }, */
-    { name: "Новинки", value: ["updatedAt", "DESC"] },
-    { name: "Дешевле", value: ["price", "ASC"] },
-    { name: "Дороже", value: ["price", "DESC"] },
-  ];
-
   const setSelectedSort = (value) => {
-    product.setSortType(sortTypes.find((type) => type.value === value));
+    product.setSortType(SORT_TYPES.find((type) => type.value === value));
   };
 
   const toLogin = (state) => {
@@ -103,33 +98,41 @@ const Shop = observer(() => {
       )}
 
       {/* тулбар */}
-      <div className={cls.toolbar}>
-        <div className={cls.selected}></div>
-        <div
-          className={cls.filter}
-          onClick={() => {
-            setSort(!sort);
-          }}
-        >
-          <div className={cls.filterTitle}>
-            <div className={cls.filterName}>Фильтры</div>
-            <Sort className={cls.filterIcon} />
+      {useScreenSize().isSm ? (
+        <div className={cls.toolbar}>
+          <div className={cls.filter}>
+            <Select
+              options={product.types}
+              type={"checkbox"}
+              selected={"Выберите категории"}
+              size={"s"}
+            />
+          </div>
+          <div className={cls.sort}>
+            <Select
+              options={SORT_TYPES}
+              selected={product.sortType.value}
+              setSelected={setSelectedSort}
+              size={"s"}
+            />
           </div>
         </div>
-      </div>
-
-      <div className={cls.toolbar}>
-        <div className={cls.filter}>
-          <Select options={product.types} />
+      ) : (
+        <div className={cls.toolbar}>
+          <div className={cls.selected}></div>
+          <div
+            className={cls.filter}
+            onClick={() => {
+              setSort(!sort);
+            }}
+          >
+            <div className={cls.filterTitle}>
+              <div className={cls.filterName}>Фильтры</div>
+              <Sort className={cls.filterIcon} />
+            </div>
+          </div>
         </div>
-        <div className={cls.sort}>
-          <Select
-            options={sortTypes}
-            selected={product.sortType.value}
-            setSelected={setSelectedSort}
-          />
-        </div>
-      </div>
+      )}
 
       {/* Выбранные категории */}
       <div className={cls.selectedTypes}>
