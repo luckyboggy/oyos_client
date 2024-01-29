@@ -1,9 +1,17 @@
 .sidebar {
+  .choosenItem {
+    font: var(--font-main-m);
+    margin: 1rem 0;
+  }
   .items {
+
     .item {
+      font: var(--font-main-s);
+      cursor: pointer;
+      margin: 0.5rem 0;
     }
     .selected {
-        
+      
     }
   }
 }
