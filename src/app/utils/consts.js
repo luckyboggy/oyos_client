@@ -41,6 +41,12 @@ export const MANAGEMENT = [
   { value: "personal", name: "Личные данные" },
 ];
 
+export const USER_MANAGEMENT = [
+  { value: "personal", name: "Личные данные" },
+  { value: "orders", name: "Заказы" },
+  { value: "favorites", name: "Избранное" },
+];
+
 
 
 //CSS
