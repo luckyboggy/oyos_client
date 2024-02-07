@@ -8,11 +8,11 @@
     grid-template-columns: 1fr 4fr;
     gap: 2rem;
     padding: calc(var(--padding-l) / 2) var(--padding-l);
-    max-width: 800px;
+    max-width: 1000px;
   }
 
   @include breakpoint(xl) {
-    max-width: 1000px;
+    max-width: 1200px;
   }
   .menu {
     color: var(--font-color);
@@ -20,5 +20,8 @@
   }
 
   .content {
+    @include breakpoint(lg) {
+      padding-top: calc(74px - var(--padding-m));
+    }
   }
 }

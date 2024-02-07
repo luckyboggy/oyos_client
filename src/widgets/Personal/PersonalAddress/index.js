@@ -1,1 +1,1 @@
-impoexportrt { PersonalAddress } from "./ui/PersonalAddress";
+export { PersonalAddress } from "./ui/PersonalAddress";

@@ -1,2 +1,15 @@
+@import "app/style/variables/breakpoint.scss";
+
 .personalData {
+  @include breakpoint(lg) {
+    .dataItem {
+      display: grid;
+      grid-template-columns: 2fr 4fr;
+      gap: 1rem;
+      .dataTitle {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
 }

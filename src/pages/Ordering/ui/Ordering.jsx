@@ -11,7 +11,6 @@ import cls from "./Ordering.module.scss";
 import { handleFromBasketToOrder } from "shared/lib/functions/orderFunctions";
 import { PersonalData } from "widgets/Personal/PersonalData";
 import { PersonalAddress } from "widgets/Personal/PersonalAddress/ui/PersonalAddress";
-
 const Ordering = () => {
   const { user } = useContext(Context);
   const [newPersonal, setNewPersonal] = useState({

@@ -2,8 +2,19 @@
 @import "variables/global.scss";
 @import "variables/breakpoint.scss";
 
+html {
+  scrollbar-width: none;
+}
+
+body {
+  overflow-y: scroll;
+}
+
 .app {
   font-family: var(--font-family-main);
+  //height: 100vh;
+  //width: 100vw;
+  //overflow-y: overlay;
 }
 
 .text {

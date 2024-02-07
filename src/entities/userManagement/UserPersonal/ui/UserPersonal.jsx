@@ -5,8 +5,10 @@ import { LOGIN_ROUTE } from "app/utils/consts";
 import { change } from "http/userAPI";
 import { CustomButton } from "shared/ui/button/CustomButton";
 import { observer } from "mobx-react-lite";
-import cls from "./UserPersonal.module.scss";
 import { PersonalData } from "widgets/Personal/PersonalData";
+import { PersonalAddress } from "widgets/Personal/PersonalAddress";
+
+import cls from "./UserPersonal.module.scss";
 
 const UserPersonal = observer(() => {
   const { user } = useContext(Context);
@@ -15,6 +17,13 @@ const UserPersonal = observer(() => {
     name: "",
     surename: "",
     phone: "",
+  });
+  const [customerAddress, setCustomerAddress] = useState({
+    city: "",
+    street: "",
+    house: "",
+    flat: "",
+    zipCode: 0,
   });
 
   const exit = () => {
@@ -38,14 +47,17 @@ const UserPersonal = observer(() => {
     });
   };
 
-  console.log(user.user);
-
   return (
     <div className={cls.personal}>
       <PersonalData
         user={user}
         personal={newPersonal}
         setPersonal={setNewPersonal}
+      />
+      <div className={cls.title}>Адрес доставки</div>
+      <PersonalAddress
+        address={customerAddress}
+        setAddress={setCustomerAddress}
       />
 
       <div className={cls.btns}>

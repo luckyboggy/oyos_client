@@ -1,7 +1,20 @@
+@import "app/style/variables/breakpoint.scss";
+
 .personalAddress {
   .houseFlat {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+  }
+  @include breakpoint(lg) {
+    .dataItem {
+      display: grid;
+      grid-template-columns: 2fr 4fr;
+      gap: 1rem;
+      .dataTitle {
+        display: flex;
+        align-items: center;
+      }
+    }
   }
 }

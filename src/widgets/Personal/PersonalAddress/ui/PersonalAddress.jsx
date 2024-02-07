@@ -1,33 +1,41 @@
 import React from "react";
+import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { CustomInput } from "shared/ui/input/CustomInput";
 import cls from "./PersonalAddress.module.scss";
 
 export const PersonalAddress = ({ address, setAddress }) => {
   return (
     <div className={cls.personalAddress}>
-      <CustomInput
-        type="text"
-        placeholder={"Город"}
-        size={"m"}
-        value={address.city}
-        onChange={(event) =>
-          setAddress({ ...address, name: event.target.value })
-        }
-      />
+      <div className={cls.dataItem}>
+        {useScreenSize().isMd && <div className={cls.dataTitle}>Город</div>}
+        <CustomInput
+          type="text"
+          placeholder={"Город"}
+          size={"m"}
+          value={address.city}
+          onChange={(event) =>
+            setAddress({ ...address, name: event.target.value })
+          }
+        />
+      </div>
 
       {/* выбор улицы */}
-      <CustomInput
-        type="text"
-        placeholder={"Улица"}
-        size={"m"}
-        value={address.street}
-        onChange={(event) =>
-          setAddress({
-            ...address,
-            street: event.target.value,
-          })
-        }
-      />
+      <div className={cls.dataItem}>
+        {useScreenSize().isMd && <div className={cls.dataTitle}>Улица</div>}
+        <CustomInput
+          type="text"
+          placeholder={"Улица"}
+          size={"m"}
+          value={address.street}
+          onChange={(event) =>
+            setAddress({
+              ...address,
+              street: event.target.value,
+            })
+          }
+        />
+      </div>
+
       <div className={cls.houseFlat}>
         <CustomInput
           type="text"

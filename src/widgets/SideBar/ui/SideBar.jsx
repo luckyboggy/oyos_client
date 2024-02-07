@@ -10,7 +10,9 @@ const SideBar = ({ options, selected, setSelected }) => {
       <div className={cls.items}>
         {options.map((option) => (
           <div
-            className={cls.item}
+            className={`${cls.item} ${
+              option.value === selected ? cls.selected : ""
+            }`}
             key={option.name}
             onClick={() => {
               setSelected(option.value);

@@ -5,9 +5,22 @@
     100vh - var(--header-height) - var(--select-height) - 4 * var(--padding-m)
   );
   position: relative;
+  @include breakpoint(lg) {
+    min-height: 0;
+    width: 60%;
+  }
+  .title {
+    margin: 2rem 0 1rem 0;
+  }
   .btns {
     width: 100%;
     position: absolute;
     bottom: 0;
+    @include breakpoint(lg) {
+      position: relative;
+      margin-top: 1rem;
+      margin-left: 60%;
+      width: 40%;
+    }
   }
 }

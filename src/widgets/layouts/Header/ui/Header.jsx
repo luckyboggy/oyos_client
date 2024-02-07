@@ -7,8 +7,8 @@ import { ReactComponent as Burger } from "shared/assets/img/svg/burger.svg";
 import { ReactComponent as Auth } from "shared/assets/img/svg/person.svg";
 import { Context } from "index.js";
 import { observer } from "mobx-react-lite";
-import cls from "./Header.module.scss";
 import { Search } from "widgets/Search";
+import cls from "./Header.module.scss";
 
 const Header = observer(({ setMobileMenu, theme }) => {
   const { user } = useContext(Context);

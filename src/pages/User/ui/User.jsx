@@ -7,6 +7,7 @@ import { SideBar } from "widgets/SideBar/ui/SideBar";
 import { observer } from "mobx-react-lite";
 import { USER_MANAGEMENT } from "app/utils/consts";
 import cls from "./User.module.scss";
+import { Favorites } from "pages/Favorites/ui/Favorites";
 
 const User = observer(() => {
   const [currentManagement, setCurrentManagement] = useState("personal");
@@ -31,6 +32,7 @@ const User = observer(() => {
       <div className={cls.content}>
         {currentManagement === "personal" && <UserPersonal />}
         {currentManagement === "orders" && <UserOrders />}
+        {currentManagement === "favorites" && <Favorites />}
       </div>
     </div>
   );

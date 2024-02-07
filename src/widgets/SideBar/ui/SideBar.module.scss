@@ -1,17 +1,17 @@
 .sidebar {
   .choosenItem {
     font: var(--font-main-m);
-    margin: 1rem 0;
+    margin: var(--margin-l) var(--margin-s);
   }
   .items {
-
     .item {
       font: var(--font-main-s);
       cursor: pointer;
-      margin: 0.5rem 0;
+      padding: var(--padding-m) var(--padding-s);
     }
     .selected {
-      
+      background: var(--selected-color);
+      border-radius: 4px;
     }
   }
 }
