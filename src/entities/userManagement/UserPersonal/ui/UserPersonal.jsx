@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { LOGIN_ROUTE } from "app/utils/consts";
 import { change } from "http/userAPI";
 import { CustomButton } from "shared/ui/button/CustomButton";
+import { CustomAccordion } from "shared/ui/accordion/CustomAccordion";
 import { observer } from "mobx-react-lite";
 import { PersonalData } from "widgets/Personal/PersonalData";
 import { PersonalAddress } from "widgets/Personal/PersonalAddress";
@@ -54,11 +55,16 @@ const UserPersonal = observer(() => {
         personal={newPersonal}
         setPersonal={setNewPersonal}
       />
-      <div className={cls.title}>Адрес доставки</div>
-      <PersonalAddress
-        address={customerAddress}
-        setAddress={setCustomerAddress}
+      <CustomAccordion
+        title={"Адрес доставки"}
+        content={
+          <PersonalAddress
+            address={customerAddress}
+            setAddress={setCustomerAddress}
+          />
+        }
       />
+
 
       <div className={cls.btns}>
         <CustomButton fontSize={"s"} onClick={changePersonal}>

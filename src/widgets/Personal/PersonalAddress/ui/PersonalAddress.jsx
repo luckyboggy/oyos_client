@@ -37,19 +37,24 @@ export const PersonalAddress = ({ address, setAddress }) => {
       </div>
 
       <div className={cls.houseFlat}>
-        <CustomInput
-          type="text"
-          placeholder={"Дом"}
-          size={"m"}
-          value={address.house}
-          onChange={(event) =>
-            setAddress({
-              ...address,
-              house: event.target.value,
-            })
-          }
-        />
-        <CustomInput
+        <div className={cls.dataItem}>
+          {useScreenSize().isMd && <div className={cls.dataTitle}>Дом</div>}
+          <CustomInput
+            type="text"
+            placeholder={"Дом"}
+            size={"m"}
+            value={address.house}
+            onChange={(event) =>
+              setAddress({
+                ...address,
+                house: event.target.value,
+              })
+            }
+          />
+        </div>
+        <div className={cls.dataItem}>
+          {useScreenSize().isMd && <div className={cls.dataTitle}>Квартира</div>}
+          <CustomInput
           type="text"
           placeholder={"Картира"}
           size={"m"}
@@ -61,6 +66,9 @@ export const PersonalAddress = ({ address, setAddress }) => {
             })
           }
         />
+        </div>
+
+        
       </div>
     </div>
   );

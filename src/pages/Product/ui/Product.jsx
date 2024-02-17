@@ -13,6 +13,7 @@ import {
   toggleFavorite,
 } from "shared/lib/functions/favoritesFunctions.js";
 import { ReactComponent as Like } from "shared/assets/img/svg/like.svg";
+
 import { observer } from "mobx-react-lite";
 import { BASKET_ROUTE } from "app/utils/consts";
 import { CustomButton } from "shared/ui/button/CustomButton";
@@ -26,7 +27,7 @@ const Product = observer(() => {
   const [selectedSize, setSelectedSize] = useState("unified");
   const [btnsShow, setBtnsShow] = useState(false);
   const [isOneSize, setIsOneSize] = useState(true);
-  //const inBasket = isInBasket(item.id);
+ 
   const favorite = isInFavorites(item.id);
   const isDesktop = useScreenSize().isMd;
 
@@ -40,6 +41,8 @@ const Product = observer(() => {
     }
   };
 
+
+
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 10) {
       setBtnsShow(true);
@@ -52,7 +55,7 @@ const Product = observer(() => {
     fetchOneProduct(id).then((data) => {
       setItem(data);
     });
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     if (item.productSize && item.productSize[0].size === "unified") {
@@ -69,8 +72,13 @@ const Product = observer(() => {
 
   return (
     <div className={cls.product}>
+      
+
       {/* изображения */}
-      <div className={cls.productImg}>
+      <div
+        className={cls.productImg}
+        
+      >
         {item.img && (
           <CustomCarousel
             url={process.env.REACT_APP_API_URL}

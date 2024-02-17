@@ -13,10 +13,9 @@ import { CustomButton } from "shared/ui/button/CustomButton.jsx";
 import { Modal } from "shared/ui/modal/Modal";
 import { Preloader } from "shared/ui/preloader/Preloader";
 import { SORT_TYPES } from "app/utils/consts";
-import cls from "./Shop.module.scss";
-
 import logo from "shared/assets/img/png/logo.png";
 import { Select } from "shared/ui/select2/Select";
+import cls from "./Shop.module.scss";
 
 const Shop = observer(() => {
   const [sort, setSort] = useState(false);
@@ -43,7 +42,7 @@ const Shop = observer(() => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+  }, [product]);
 
   useEffect(() => {
     fetchProducts(
@@ -72,7 +71,7 @@ const Shop = observer(() => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [product.page, product.selectedType, product.sortType.value]);
+  }, [product, product.page, product.selectedType, product.sortType.value]);
 
   return (
     <div className={cls.shop}>

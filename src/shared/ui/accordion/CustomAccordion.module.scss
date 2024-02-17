@@ -1,26 +1,29 @@
 .customAccordion {
   color: var(--primary-color);
   margin-top: 1rem;
-  .ac__header {
+  .header {
     display: flex;
     align-items: center;
     padding: 0.5rem 0;
-    .ac__header_title {
+    .title {
       font-size: 20px;
+      cursor: pointer;
     }
-    .ac__header_arrow {
+    .arrow {
       margin-left: 1rem;
       width: 18px;
       height: 18px;
-      fill: var(--secondary-color);
+      fill: var(--primary-color);
+      cursor: pointer;
+      transform: rotate(180deg);
     }
     .visible {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
   }
 
-  .ac__content {
-    .ac__content_item {
+  .content {
+    .item {
       padding: 0.5rem;
       font-size: 18px;
     }

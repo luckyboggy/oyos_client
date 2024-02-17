@@ -10,6 +10,7 @@
       overflow: hidden;
       width: 100%;
       height: 100%;
+      cursor: zoom-in;
       .imagesLine {
         display: flex;
         transition: all 250ms linear;
@@ -34,6 +35,7 @@
         height: 10px;
         border-radius: 50%;
         background-color: rgb(206, 206, 206);
+        cursor: pointer;
       }
       .current {
         background-color: var(--primary-color);

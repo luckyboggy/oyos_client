@@ -1,0 +1,79 @@
+.photoViewer {
+  width: 100%;
+  height: 100%;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 150px auto;
+    .tabList {
+      padding: 2rem;
+      .tabItem {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border: solid 2px transparent;
+        cursor: pointer;
+      }
+      .selected {
+        border: solid 2px var(--secondary-color);
+      }
+    }
+    .content {
+      margin: auto;
+      .img {
+        margin: auto;
+        img {
+          max-height: 100vh;
+          margin: auto;
+        }
+      }
+      .btn {
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        outline: solid 2px var(--font-color);
+
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 10px 0.3em var(--font-color);
+        }
+      }
+
+      .closeBtn {
+        right: 20px;
+        top: 20px;
+        .close {
+          height: 20px;
+          width: 20px;
+          margin-top: 10px;
+          margin-left: 10px;
+          fill: var(--font-color);
+        }
+      }
+      .prevBtn {
+        left: 170px;
+        top: calc(50vh - 20px);
+        .prev {
+          height: 20px;
+          width: 20px;
+          margin-top: 10px;
+          margin-left: 10px;
+          fill: var(--font-color);
+        }
+      }
+      .nextBtn {
+        right: 20px;
+        top: calc(50vh - 20px);
+        .next {
+          height: 20px;
+          width: 20px;
+          margin-top: 10px;
+          margin-left: 10px;
+          fill: var(--font-color);
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
