@@ -1,13 +1,19 @@
 import React from "react";
 import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { CustomInput } from "shared/ui/input/CustomInput";
+import { Text } from "shared/ui/text/Text";
 import cls from "./PersonalAddress.module.scss";
 
 export const PersonalAddress = ({ address, setAddress }) => {
+  const isMd = useScreenSize().isMd;
   return (
     <div className={cls.personalAddress}>
       <div className={cls.dataItem}>
-        {useScreenSize().isMd && <div className={cls.dataTitle}>Город</div>}
+        {isMd && (
+          <div className={cls.dataTitle}>
+            <Text size={"s"}>Населенный пункт</Text>
+          </div>
+        )}
         <CustomInput
           type="text"
           placeholder={"Город"}
@@ -18,10 +24,14 @@ export const PersonalAddress = ({ address, setAddress }) => {
           }
         />
       </div>
-
+      {/* Способ доставки / delivery method */}
       {/* выбор улицы */}
       <div className={cls.dataItem}>
-        {useScreenSize().isMd && <div className={cls.dataTitle}>Улица</div>}
+        {isMd && (
+          <div className={cls.dataTitle}>
+            <Text size={"s"}>Улица</Text>
+          </div>
+        )}
         <CustomInput
           type="text"
           placeholder={"Улица"}
@@ -38,7 +48,11 @@ export const PersonalAddress = ({ address, setAddress }) => {
 
       <div className={cls.houseFlat}>
         <div className={cls.dataItem}>
-          {useScreenSize().isMd && <div className={cls.dataTitle}>Дом</div>}
+          {isMd && (
+            <div className={cls.dataTitle}>
+              <Text size={"s"}>Дом</Text>
+            </div>
+          )}
           <CustomInput
             type="text"
             placeholder={"Дом"}
@@ -53,22 +67,24 @@ export const PersonalAddress = ({ address, setAddress }) => {
           />
         </div>
         <div className={cls.dataItem}>
-          {useScreenSize().isMd && <div className={cls.dataTitle}>Квартира</div>}
+          {isMd && (
+            <div className={cls.dataTitle}>
+              <Text size={"s"}>Квартира/Офис</Text>
+            </div>
+          )}
           <CustomInput
-          type="text"
-          placeholder={"Картира"}
-          size={"m"}
-          value={address.flat}
-          onChange={(event) =>
-            setAddress({
-              ...address,
-              flat: event.target.value,
-            })
-          }
-        />
+            type="text"
+            placeholder={"Картира"}
+            size={"m"}
+            value={address.flat}
+            onChange={(event) =>
+              setAddress({
+                ...address,
+                flat: event.target.value,
+              })
+            }
+          />
         </div>
-
-        
       </div>
     </div>
   );

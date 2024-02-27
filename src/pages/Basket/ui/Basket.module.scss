@@ -3,6 +3,10 @@
 .basket {
   padding: var(--padding-m);
   margin: auto;
+  @include breakpoint(md) {
+    padding: calc(var(--padding-l) / 2) var(--padding-l);
+    max-width: 800px;
+  }
   @include breakpoint(lg) {
     padding: calc(var(--padding-l) / 2) var(--padding-l);
     max-width: 800px;
@@ -46,10 +50,11 @@
   }
 
   .details {
+    margin-top: calc(2 * var(--margin-l));
     .detailsWrapper {
       display: grid;
-      grid-template-columns: 3fr 1fr;
-      gap: var(--margin-m);
+      grid-template-columns: 3fr 1.3fr;
+      gap: calc(2 * var(--margin-l));
       .ordering {
       }
       .total {
@@ -66,6 +71,9 @@
               color: var(--primary-color);
               text-decoration: none;
             }
+          }
+          .loginLink {
+            margin-bottom: var(--margin-m);
           }
           a {
             text-decoration: none;

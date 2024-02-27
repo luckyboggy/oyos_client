@@ -4,19 +4,25 @@
   width: 100%;
   margin-bottom: 0.5rem;
   @include breakpoint(lg) {
-
   }
   .content {
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 1rem;
     margin-bottom: 0.25rem;
+    @include breakpoint(md) {
+      grid-template-columns: 1fr 7fr;
+    }
     @include breakpoint(lg) {
       grid-template-columns: 1fr 9fr;
     }
     .basketProductImg {
+      cursor: pointer;
       img {
         width: 100%;
+        @include breakpoint(md) {
+          max-width: 100px;
+        }
       }
     }
 
@@ -35,6 +41,7 @@
           stroke: var(--primary-color);
           height: 22px;
           width: 22px;
+          cursor: pointer;
         }
       }
 
