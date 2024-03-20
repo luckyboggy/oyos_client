@@ -9,7 +9,7 @@ import { basketTotalPrice } from "shared/lib/functions/basketFunctions.js";
 import { observer } from "mobx-react-lite";
 import { CustomButton } from "shared/ui/button/CustomButton.jsx";
 import { Text } from "shared/ui/text/Text";
-import { handleFromBasketToOrderNotAuth } from "shared/lib/functions/orderFunctions";
+import { handleFromLocalBasketToOrder } from "shared/lib/functions/orderFunctions";
 import cls from "./Basket.module.scss";
 
 const Basket = observer(() => {
@@ -32,6 +32,7 @@ const Basket = observer(() => {
     flat: "",
     zipCode: 0,
   });
+
 
   useEffect(() => {
     basketTotalPrice().then((total) => setTotalPrice(total));
@@ -111,7 +112,7 @@ const Basket = observer(() => {
                       fontSize={"s"}
                       onClick={(event) => {
                         event.preventDefault();
-                        handleFromBasketToOrderNotAuth(newPersonal.email);
+                        handleFromLocalBasketToOrder(newPersonal);
                       }}
                     >
                       Оформить

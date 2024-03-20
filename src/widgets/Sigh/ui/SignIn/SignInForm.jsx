@@ -14,6 +14,8 @@ const SignInForm = ({ authUser, setAuthUser, signClick }) => {
         onChange={(event) =>
           setAuthUser({ ...authUser, email: event.target.value })
         }
+        emptyCheck
+        emptyLabel={"Обязательное поле"}
       />
       <CustomInput
         type="password"
@@ -23,6 +25,8 @@ const SignInForm = ({ authUser, setAuthUser, signClick }) => {
         onChange={(event) =>
           setAuthUser({ ...authUser, password: event.target.value })
         }
+        emptyCheck
+        emptyLabel={"Обязательное поле"}
       />
       <div className={cls.resetPass}>
         <a href="/#">Восстановить пароль</a>

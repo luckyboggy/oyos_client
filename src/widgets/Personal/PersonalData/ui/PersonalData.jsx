@@ -10,6 +10,7 @@ export const PersonalData = ({
   setPersonal,
   withBirthData = false,
   withPhone = false,
+  check,
 }) => {
   const isMd = useScreenSize().isMd;
 
@@ -47,6 +48,8 @@ export const PersonalData = ({
           onChange={(event) =>
             setPersonal({ ...personal, name: event.target.value })
           }
+          emptyCheck
+          emptyLabel={"Обязательное поле"}
         />
       </div>
 
@@ -64,6 +67,8 @@ export const PersonalData = ({
           onChange={(event) =>
             setPersonal({ ...personal, surename: event.target.value })
           }
+          emptyCheck
+          emptyLabel={"Обязательное поле"}
         />
       </div>
       {withBirthData && (

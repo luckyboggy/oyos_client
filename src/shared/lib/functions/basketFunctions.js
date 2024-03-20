@@ -23,7 +23,7 @@ const handleAddToBasket = async (
       user.setBasketItems(data.rows);
     });
   } else {
-    user.addToLocalBasket(id, selectedSize);
+    user.addToLocalBasket(id, selectedSize, quantity);
     window.localStorage.setItem(
       "localBasket",
       JSON.stringify(user.localBasket)

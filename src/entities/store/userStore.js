@@ -59,7 +59,7 @@ export class UserStore {
   }
 
   // local basket
-  addToLocalBasket(productId, selectedSize) {
+  addToLocalBasket(productId, selectedSize, quantity) {
     if (
       !this._localBasket.find(
         (item) =>
@@ -69,6 +69,7 @@ export class UserStore {
       this._localBasket.push({
         productId: productId,
         selectedSize: selectedSize,
+        quantity: quantity,
       });
     }
   }

@@ -1,6 +1,9 @@
-import { createOrder, setOrderNumber, fromBasketToOrder } from "http/orderAPI";
-import { registration } from "http/userAPI";
-import { fetchBasketProduct } from "http/basketProductAPI";
+import {
+  createOrder,
+  setOrderNumber,
+  fromBasketToOrder,
+  fromLocalBasketToOrder,
+} from "http/orderAPI";
 import { user } from "index.js";
 
 // Перенос из корзины в заказ (у авторизованного пользователя)
@@ -16,8 +19,10 @@ const handleFromBasketToOrder = async () => {
 
 // Создание пользователя и перенос содержимого корзины в заказ
 
-const handleFromBasketToOrderNotAuth = async () => {
-  
+const handleFromLocalBasketToOrder = async (personal) => {
+  await fromLocalBasketToOrder(personal).then((data) => {
+    window.localStorage.removeItem("localBasket");
+  });
 };
 
-export { handleFromBasketToOrder, handleFromBasketToOrderNotAuth };
+export { handleFromBasketToOrder, handleFromLocalBasketToOrder };

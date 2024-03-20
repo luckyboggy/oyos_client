@@ -1,45 +1,60 @@
-.customInput {
-  width: 100%;
-  padding: 12px;
-  font-size: var(--font-main-m);
-  margin: var(--margin-m) 0;
-  //background: transparent;
-  //border: none;
-  //
-  //border: 1px solid transparent;
-  //border-bottom: 1px solid var(--primary-color);
-  //
-  background: #f8f8f8;
-  border: 1px solid #cccccc;
-  outline: none;
-  transition: 0.3s;
-  z-index: 1;
-}
+.inputWrapper {
+  position: relative;
+  .customInput {
+    width: 100%;
+    padding: 12px;
+    font-size: var(--font-main-m);
+    margin: var(--margin-m) 0;
+    //background: transparent;
+    //border: none;
+    //
+    //border: 1px solid transparent;
+    //border-bottom: 1px solid var(--primary-color);
+    //
+    background: #f8f8f8;
+    border: 1px solid #cccccc;
+    outline: none;
+    transition: 0.3s;
+    z-index: 1;
+  }
 
-.readonly {
-  user-select: none;
-  color: #cccccc;
-}
+  .readonly {
+    user-select: none;
+    color: #cccccc;
+  }
 
-.customInput:focus {
-  border: 1px solid var(--primary-color);
-}
+  .customInput:focus {
+    border: 1px solid var(--primary-color);
+  }
 
+  .customInput.readonly:focus {
+    border: 1px solid #cccccc;
+  }
 
-.customInput.readonly:focus {
-  border: 1px solid #cccccc;
-}
+  .error {
+    border: 1px solid var(--error-color);
+    background: var(--error-bg-color);
+  }
 
-.s {
-  padding: var(--padding-s);
-  margin: var(--margin-s) 0;
-  font: var(--font-main-s);
-}
+  .s {
+    padding: var(--padding-s);
+    margin: var(--margin-s) 0;
+    font: var(--font-main-s);
+  }
 
-.m {
-  font: var(--font-main-m);
-}
+  .m {
+    font: var(--font-main-m);
+  }
 
-.l {
-  font: var(--font-main-l);
+  .l {
+    font: var(--font-main-l);
+  }
+
+  .inputLabel {
+    font: var(--font-main-s);
+    color: var(--error-color);
+    position: absolute;
+    left: 0;
+    top: 66px;
+  }
 }

@@ -12,10 +12,11 @@ const setOrderNumber = async (userId) => {
 
 const changeOrderStatus = async (id, status) => {
   const { data } = await $authHost.post("api/order/changeStatus", {
-    id, status
+    id,
+    status,
   });
   return data;
-}
+};
 
 const getOrdersByUser = async (userId) => {
   const { data } = await $authHost.get(`api/order/${userId}`);
@@ -30,8 +31,18 @@ const fetchOrdersByStatus = async (statuses) => {
 };
 
 const fromBasketToOrder = async (userId) => {
-  console.log('fbto')
   const { data } = await $authHost.post("api/order/basketToOrder", { userId });
+  return data;
+};
+
+const fromLocalBasketToOrder = async (personal) => {
+  const localBasket = JSON.parse(window.localStorage.getItem("localBasket"));
+
+  const { data } = await $authHost.post("api/order/localBasketToOrder", {
+    personal,
+    localBasket,
+  });
+
   return data;
 };
 
@@ -40,6 +51,7 @@ export {
   setOrderNumber,
   getOrdersByUser,
   fromBasketToOrder,
+  fromLocalBasketToOrder,
   changeOrderStatus,
   fetchOrdersByStatus,
 };
