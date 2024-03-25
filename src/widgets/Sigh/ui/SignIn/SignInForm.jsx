@@ -1,6 +1,7 @@
 import React from "react";
 import { CustomInput } from "shared/ui/input/CustomInput";
 import { CustomButton } from "shared/ui/button/CustomButton";
+import { isEmailValid } from "shared/lib/functions/checkFunctions";
 import cls from "./SignInForm.module.scss";
 
 const SignInForm = ({ authUser, setAuthUser, signClick }) => {
@@ -16,6 +17,9 @@ const SignInForm = ({ authUser, setAuthUser, signClick }) => {
         }
         emptyCheck
         emptyLabel={"Обязательное поле"}
+        errorLabel={
+          !isEmailValid(authUser.email) ? "Введите корректный email" : ""
+        }
       />
       <CustomInput
         type="password"
