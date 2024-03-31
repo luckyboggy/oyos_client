@@ -14,6 +14,7 @@ export class UserStore {
     this._orderItems = [];
     this._toLogin = false;
     this._searching = false;
+    this._searchValue = "";
     //local basket
     this._localBasket = [];
     this._localFavorites = [];
@@ -45,6 +46,9 @@ export class UserStore {
   }
   setSearching(state) {
     this._searching = state;
+  }
+  setSearchValue(searchValue) {
+    this._searchValue = searchValue;
   }
 
   // favorite
@@ -126,6 +130,9 @@ export class UserStore {
   }
   get searching() {
     return this._searching;
+  }
+  get searchValue() {
+    return this._searchValue;
   }
   get localBasket() {
     return this._localBasket;

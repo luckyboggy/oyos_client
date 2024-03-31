@@ -4,6 +4,7 @@ export const ORDERING_ROUTE = "ordering";
 
 export const SHOP_ROUTE = "shop";
 export const PRODUCT_ROUTE = "product";
+export const SEARCH_ROUTE = "search";
 
 export const REGISTRATION_ROUTE = "registration";
 export const LOGIN_ROUTE = "login";

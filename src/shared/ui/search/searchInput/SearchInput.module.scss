@@ -8,15 +8,19 @@
   cursor: pointer;
   .search {
     padding: 3px;
-    width: 30px;
+
+    width: 32px;
     height: 30px;
+    margin-right: -2px;
     background: none;
     border: 1px solid transparent;
-    border-radius: 50px;
+    //border-radius: 50px;
     box-sizing: border-box;
     color: var(--secondary-color);
     outline: none;
     transition: 0.5s;
+    cursor: default;
+    pointer-events: none;
   }
   .searchIcon {
     height: 26px;
@@ -38,12 +42,13 @@
     width: 100%;
     background: #3b3640;
     border-radius: 5px;
-    padding: 0 1rem;
+    display: block;
+    padding: 0 2.5rem 0 0.5rem;
+    cursor: pointer;
+    
   }
-
   .searchIcon {
-    opacity: 0;
-    z-index: -1;
+    display: block;
+    
   }
 }
-

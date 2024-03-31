@@ -1,0 +1,15 @@
+.searchVariants {
+  position: absolute;
+  margin-left: 2px;
+  width: 100%;
+  background-color: var(--basic-bg-color);
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.1);
+  z-index: 200;
+}
+
+.variantsItem {
+  padding: 0.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+}

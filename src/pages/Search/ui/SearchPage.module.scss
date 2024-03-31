@@ -1,0 +1,13 @@
+@import "app/style/variables/breakpoint.scss";
+
+.searchPage {
+    padding: var(--padding-m);
+    margin: auto;
+    @include breakpoint(lg) {
+      padding: calc(var(--padding-l) / 2) var(--padding-l);
+      max-width: 800px;
+    }
+    @include breakpoint(xl) {
+      max-width: 800px;
+    }
+}

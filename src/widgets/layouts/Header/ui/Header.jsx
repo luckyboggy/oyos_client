@@ -31,9 +31,13 @@ const Header = observer(({ setMobileMenu, theme }) => {
     };
   }, [prevScrollPosition]);
 
+  /* const headerClass = `${cls.header} ${cls[theme]}  ${
+    isHeaderVisible ? cls.show : cls.hide
+  }  ${user.searching ? cls.white : ""}`; */
+
   const headerClass = `${cls.header} ${cls[theme]}  ${
     isHeaderVisible ? cls.show : cls.hide
-  }  ${user.searching ? cls.white : ""}`;
+  } `;
 
   return (
     <header className={headerClass}>
@@ -62,7 +66,6 @@ const Header = observer(({ setMobileMenu, theme }) => {
 
         {useScreenSize().isLg && (
           <div className={cls.search}>
-            {/* <SearchInput /> */}
             <Search />
           </div>
         )}

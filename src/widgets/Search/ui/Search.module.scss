@@ -1,10 +1,11 @@
 .search {
-  .headerBlocker {
+  .blocker {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: var(--header-height);
+    height: 100vh;
+    //height: var(--header-height);
     //background-color: white;
     z-index: 110;
   }
@@ -18,5 +19,4 @@
 
     z-index: 100;
   }
-
 }

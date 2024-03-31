@@ -40,7 +40,7 @@ const CustomInput = ({
           {emptyLabel}
         </label>
       )}
-      {isError && (
+      {isError && !isEmpty && (
         <label htmlFor="input" className={cl.inputLabel}>
           {errorLabel}
         </label>

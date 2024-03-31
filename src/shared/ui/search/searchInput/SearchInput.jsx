@@ -1,33 +1,47 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import { Context } from "index.js";
+import { useNavigate } from "react-router-dom";
+import { SEARCH_ROUTE } from "app/utils/consts.js";
 import { ReactComponent as Search } from "shared/assets/img/svg/search.svg";
 import { observer } from "mobx-react-lite";
 import cls from "./SearchInput.module.scss";
 
-export const SearchInput = observer(
-  ({ searchValue = "", changeSearchValue }) => {
-    const { user } = useContext(Context);
+export const SearchInput = observer(({ searchValue, changeSearchValue }) => {
+  const { user } = useContext(Context);
+  const inputRef = useRef(null);
+  const navigate = useNavigate();
+  const isSearching = user.searching;
 
-    return (
-      <div
-        className={`${cls.searchInput} ${user.searching ? cls.searching : ""}`}
-      >
-        <input
-          className={cls.search}
-          value={searchValue}
-          onChange={changeSearchValue}
-          onMouseOut={(event) => {
-            //event.target.value = "";
-            //event.target.blur();
-          }}
-        ></input>
-        <Search
-          className={cls.searchIcon}
-          onClick={() => {
+  useEffect(() => {}, [user.searching]);
+
+  return (
+    <div className={`${cls.searchInput} ${isSearching ? cls.searching : ""}`}>
+      <input
+        ref={inputRef}
+        className={cls.search}
+        //value={searchValue}
+        value={user.searchValue}
+        readOnly={!isSearching}
+        onChange={(event) => {
+          user.setSearchValue(event.target.value);
+        }}
+      ></input>
+
+      <Search
+        className={cls.searchIcon}
+        onClick={() => {
+          if (!isSearching) {
+            if (inputRef.current) {
+              inputRef.current.focus();
+            }
             user.setSearching(true);
-          }}
-        />
-      </div>
-    );
-  }
-);
+          } else {
+            if (user.searchValue.length >= 2) {
+              navigate("../" + SEARCH_ROUTE);
+            }
+          }
+        }}
+      />
+    </div>
+  );
+});

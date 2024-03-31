@@ -11,6 +11,7 @@ import { Delivery } from "pages/Delivery/ui/Delivery.jsx";
 import { User } from "pages/User/ui/User.jsx";
 import { Ordering } from "pages/Ordering/ui/Ordering.jsx";
 import { Workshops } from "pages/Workshops/ui/Workshops.jsx";
+import { SearchPage } from "pages/Search/ui/SearchPage.jsx";
 
 import {
   ABOUT_ROUTE,
@@ -24,6 +25,7 @@ import {
   NOPAGE_ROUTE,
   PRODUCT_ROUTE,
   REGISTRATION_ROUTE,
+  SEARCH_ROUTE,
   SHOP_ROUTE,
   ORDERING_ROUTE,
   WORKSHOPS_ROUTE,
@@ -38,7 +40,6 @@ const authRoutes = [
     path: USER_ROUTE,
     Element: User,
   },
-
 ];
 
 const publicRoutes = [
@@ -89,6 +90,10 @@ const publicRoutes = [
   {
     path: WORKSHOPS_ROUTE,
     Element: Workshops,
+  },
+  {
+    path: SEARCH_ROUTE,
+    Element: SearchPage,
   },
 ];
 
