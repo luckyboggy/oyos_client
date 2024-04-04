@@ -20,7 +20,7 @@ export const SearchInput = observer(({ searchValue, changeSearchValue }) => {
         ref={inputRef}
         className={cls.search}
         //value={searchValue}
-        value={user.searchValue}
+        value={isSearching ? user.searchValue : ""}
         readOnly={!isSearching}
         onChange={(event) => {
           user.setSearchValue(event.target.value);
@@ -32,11 +32,13 @@ export const SearchInput = observer(({ searchValue, changeSearchValue }) => {
         onClick={() => {
           if (!isSearching) {
             if (inputRef.current) {
+              user.setSearchValue("");
               inputRef.current.focus();
             }
             user.setSearching(true);
           } else {
             if (user.searchValue.length >= 2) {
+              user.setSearching(false);
               navigate("../" + SEARCH_ROUTE);
             }
           }

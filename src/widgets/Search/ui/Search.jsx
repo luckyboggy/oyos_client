@@ -12,12 +12,6 @@ const Search = observer(() => {
     user.setSearchValue("");
   };
 
-  useEffect(() => {
-    if (!user.searching) {
-      user.setSearchValue("");
-    }
-  });
-
   return (
     <div className={cls.search}>
       {user.searching && (
@@ -27,7 +21,7 @@ const Search = observer(() => {
         searchValue={user.searchValue}
         changeSearchValue={user.setSearchValue}
       />
-      {user.searchValue.length >= 2 && <SearchVariants />}
+      {user.searchValue.length >= 2 && user.searching && <SearchVariants />}
     </div>
   );
 });
