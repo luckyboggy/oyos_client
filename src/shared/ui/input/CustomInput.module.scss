@@ -57,4 +57,15 @@
     left: 0;
     top: 66px;
   }
+
+  .borderBottom {
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--supporting-color);
+    background: transparent;
+  }
+
+  .borderBottom:focus {
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--primary-color);
+  }
 }

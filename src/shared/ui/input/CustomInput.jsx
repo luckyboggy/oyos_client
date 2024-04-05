@@ -7,6 +7,7 @@ const CustomInput = ({
   emptyCheck = false,
   emptyLabel,
   errorLabel,
+  style,
   ...props
 }) => {
   const { readonly } = props;
@@ -29,7 +30,7 @@ const CustomInput = ({
           setIsEmpty(false);
           setIsError(false);
         }}
-        className={`${cl.customInput} ${cl[size]} ${cl[margin]} ${
+        className={`${cl.customInput} ${cl[size]} ${cl[margin]} ${cl[style]} ${
           readonly ? cl["readonly"] : ""
         } ${isEmpty && emptyCheck ? cl["error"] : ""} ${
           isError ? cl["error"] : ""
