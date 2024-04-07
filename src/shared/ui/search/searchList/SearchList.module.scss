@@ -1,0 +1,18 @@
+@import "app/style/variables/breakpoint.scss";
+.searchList {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  justify-content: center;
+  @include breakpoint(md) {
+    gap: 1rem;
+  }
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  @include breakpoint(xl) {
+    gap: 2rem;
+  }
+}
