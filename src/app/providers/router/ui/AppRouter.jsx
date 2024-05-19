@@ -1,4 +1,5 @@
 import React from "react";
+import { ScrollToTop } from "shared/ui/scrollToTop/ScrollToTop";
 import {
   authRoutes,
   publicRoutes,
@@ -9,6 +10,7 @@ export const AppRouter = ({ user }) => {
   return (
     <main>
       <div className="container">
+        <ScrollToTop />
         <Routes>
           {user.isAuth &&
             authRoutes.map(({ path, Element }) => (

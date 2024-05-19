@@ -3,6 +3,11 @@
 .mainPage {
   .startImg {
     margin-top: calc(0px - var(--header-height));
+    overflow: hidden;
+    .startImgDesktop {
+      object-fit: cover;
+      object-position: center;
+    }
     img {
       width: 100%;
       //height: 100%;

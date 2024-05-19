@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { Context } from "index.js";
 import { useNavigate } from "react-router-dom";
 import { SEARCH_ROUTE } from "app/utils/consts.js";

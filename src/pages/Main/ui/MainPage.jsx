@@ -1,4 +1,5 @@
 import React from "react";
+import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { Text } from "shared/ui/text/Text";
 import cls from "./MainPage.module.scss";
 
@@ -15,6 +16,13 @@ import slide07 from "shared/assets/img/png/main/slider/slide07.png";
 import { Slider } from "shared/ui/slider/Slider";
 
 const MainPage = () => {
+  const windowInnerWidth = document.documentElement.clientWidth;
+  const windowInnerHeight = document.documentElement.clientHeight;
+
+  const isLg = useScreenSize().isLg;
+
+  console.log(windowInnerWidth, windowInnerHeight);
+
   const sliderImages = [
     { img: slide02, description: "description02" }, //Кольца
     { img: slide01, description: "description01" }, //Сумки
@@ -26,7 +34,11 @@ const MainPage = () => {
   return (
     <div className={cls.mainPage}>
       <div className={cls.startImg}>
-        <img src={mainImg01} alt="main" />
+        {isLg ? (
+          <img src={mainImg01} alt="main" height={windowInnerHeight} className={cls.startImgDesktop}/>
+        ) : (
+          <img src={mainImg01} alt="main" />
+        )}
 
         <div className={cls.content}>
           <Text size={"m"} position={"center"} padding={"pv2"} ff={"font_test"}>
