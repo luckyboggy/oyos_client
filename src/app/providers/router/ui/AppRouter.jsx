@@ -6,6 +6,8 @@ import {
 } from "shared/consfig/routerConfig/routes.js";
 import { Routes, Route } from "react-router-dom";
 
+
+
 export const AppRouter = ({ user }) => {
   return (
     <main>

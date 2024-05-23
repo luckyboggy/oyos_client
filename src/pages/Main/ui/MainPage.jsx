@@ -4,6 +4,7 @@ import { Text } from "shared/ui/text/Text";
 import cls from "./MainPage.module.scss";
 
 import mainImg01 from "shared/assets/img/png/main/Main01.png";
+import mainImgDt01 from "shared/assets/img/png/main/mainImgDt01.png";
 
 import slide01 from "shared/assets/img/png/main/slider/slide01.png";
 import slide02 from "shared/assets/img/png/main/slider/slide02.png";
@@ -35,7 +36,7 @@ const MainPage = () => {
     <div className={cls.mainPage}>
       <div className={cls.startImg}>
         {isLg ? (
-          <img src={mainImg01} alt="main" height={windowInnerHeight} className={cls.startImgDesktop}/>
+          <img src={mainImgDt01} alt="main" height={windowInnerHeight} className={cls.startImgDesktop}/>
         ) : (
           <img src={mainImg01} alt="main" />
         )}

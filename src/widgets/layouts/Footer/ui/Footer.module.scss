@@ -10,7 +10,7 @@
       max-width: 600px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--padding-m);
+      gap: calc(10*var(--padding-l));
     }
 
     hr {
