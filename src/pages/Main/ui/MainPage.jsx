@@ -1,10 +1,13 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useScreenSize } from "shared/lib/hooks/useScreenSize";
 import { Text } from "shared/ui/text/Text";
+
 import cls from "./MainPage.module.scss";
 
 import mainImg01 from "shared/assets/img/png/main/Main01.png";
-import mainImgDt01 from "shared/assets/img/png/main/mainImgDt01.png";
+import mainImgDt01 from "shared/assets/img/png/main/mainImgDt01.jpg";
+import mainImgDt01_small from "shared/assets/img/png/main/mainImgDt01_small.jpg";
 
 import slide01 from "shared/assets/img/png/main/slider/slide01.png";
 import slide02 from "shared/assets/img/png/main/slider/slide02.png";
@@ -15,6 +18,7 @@ import slide06 from "shared/assets/img/png/main/slider/slide06.png";
 import slide07 from "shared/assets/img/png/main/slider/slide07.png";
 
 import { Slider } from "shared/ui/slider/Slider";
+import Image from "shared/ui/image/Image";
 
 const MainPage = () => {
   const windowInnerWidth = document.documentElement.clientWidth;
@@ -36,12 +40,7 @@ const MainPage = () => {
     <div className={cls.mainPage}>
       <div className={cls.startImg}>
         {isLg ? (
-          <img
-            src={mainImgDt01}
-            alt="main"
-            height={windowInnerHeight}
-            className={cls.startImgDesktop}
-          />
+          <Image img={mainImgDt01} alt={"main"} />
         ) : (
           <img src={mainImg01} alt="main" />
         )}
@@ -66,3 +65,10 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
+/*   <img
+            src={mainImgDt01}
+            alt="main"
+            height={windowInnerHeight}
+            className={cls.startImgDesktop}
+        /> */

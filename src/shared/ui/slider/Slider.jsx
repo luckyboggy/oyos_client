@@ -34,6 +34,7 @@ const Slider = ({ images, isDescription }) => {
                   src={slide.img}
                   alt={slide.type.name.name}
                   className={cls.image}
+                  loading="lazy"
                 />
               ) : (
                 <PhotoLoader />
