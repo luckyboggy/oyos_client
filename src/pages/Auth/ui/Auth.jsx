@@ -80,4 +80,4 @@ const Auth = observer(() => {
   );
 });
 
-export { Auth };
+export default Auth;

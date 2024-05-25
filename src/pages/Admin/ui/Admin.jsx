@@ -44,4 +44,4 @@ const Admin = observer(() => {
   );
 });
 
-export { Admin };
+export default Admin;

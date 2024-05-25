@@ -10,7 +10,7 @@ import { fetchProducts } from "http/productAPI";
 import { observer } from "mobx-react-lite";
 import cls from "./SearchPage.module.scss";
 
-export const SearchPage = observer(() => {
+const SearchPage = observer(() => {
   const { user } = useContext(Context);
 
   const [fetchSearcing, setFetchSearching] = useState(true);
@@ -51,8 +51,14 @@ export const SearchPage = observer(() => {
       </div>
 
       <div className={cls.searchResults}>
-        {fetchSearcing ?? localSearchValue.length >= 2 ? <Preloader /> : <SearchList searchItems={sl} />}
+        {fetchSearcing ?? localSearchValue.length >= 2 ? (
+          <Preloader />
+        ) : (
+          <SearchList searchItems={sl} />
+        )}
       </div>
     </div>
   );
 });
+
+export default SearchPage;

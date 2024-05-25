@@ -12,4 +12,4 @@ const Delivery = () => {
   );
 };
 
-export { Delivery };
+export default Delivery;

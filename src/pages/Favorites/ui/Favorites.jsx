@@ -76,4 +76,4 @@ const Favorites = observer(() => {
   );
 });
 
-export { Favorites };
+export default Favorites;

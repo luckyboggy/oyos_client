@@ -27,7 +27,7 @@ const Product = observer(() => {
   const [selectedSize, setSelectedSize] = useState("unified");
   const [btnsShow, setBtnsShow] = useState(false);
   const [isOneSize, setIsOneSize] = useState(true);
- 
+
   const favorite = isInFavorites(item.id);
   const isDesktop = useScreenSize().isMd;
 
@@ -40,8 +40,6 @@ const Product = observer(() => {
       }
     }
   };
-
-
 
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 10) {
@@ -72,13 +70,8 @@ const Product = observer(() => {
 
   return (
     <div className={cls.product}>
-      
-
       {/* изображения */}
-      <div
-        className={cls.productImg}
-        
-      >
+      <div className={cls.productImg}>
         {item.img && (
           <CustomCarousel
             url={process.env.REACT_APP_API_URL}
@@ -232,4 +225,4 @@ const Product = observer(() => {
   );
 });
 
-export { Product };
+export default Product;

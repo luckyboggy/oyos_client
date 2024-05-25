@@ -159,4 +159,4 @@ const Ordering = () => {
   );
 };
 
-export { Ordering };
+export default Ordering;

@@ -160,4 +160,4 @@ const Shop = observer(() => {
   );
 });
 
-export { Shop };
+export default Shop;

@@ -12,4 +12,4 @@ const Workshops = () => {
   );
 };
 
-export { Workshops };
+export default Workshops;

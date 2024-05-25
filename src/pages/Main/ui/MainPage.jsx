@@ -36,7 +36,12 @@ const MainPage = () => {
     <div className={cls.mainPage}>
       <div className={cls.startImg}>
         {isLg ? (
-          <img src={mainImgDt01} alt="main" height={windowInnerHeight} className={cls.startImgDesktop}/>
+          <img
+            src={mainImgDt01}
+            alt="main"
+            height={windowInnerHeight}
+            className={cls.startImgDesktop}
+          />
         ) : (
           <img src={mainImg01} alt="main" />
         )}
@@ -60,4 +65,4 @@ const MainPage = () => {
   );
 };
 
-export { MainPage };
+export default MainPage;

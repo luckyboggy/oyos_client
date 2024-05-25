@@ -1,17 +1,17 @@
-import { Admin } from "pages/Admin/ui/Admin.jsx";
-import { Basket } from "pages/Basket/ui/Basket.jsx";
-import { Shop } from "pages/Shop/ui/Shop.jsx";
-import { Product } from "pages/Product/ui/Product.jsx";
-import { MainPage } from "pages/Main/ui/MainPage.jsx";
-import { Auth } from "pages/Auth/ui/Auth.jsx";
-import { NoPage } from "pages/NoPage/ui/NoPage.jsx";
-import { About } from "pages/About/ui/About.jsx";
-import { Favorites } from "pages/Favorites/ui/Favorites.jsx";
-import { Delivery } from "pages/Delivery/ui/Delivery.jsx";
-import { User } from "pages/User/ui/User.jsx";
-import { Ordering } from "pages/Ordering/ui/Ordering.jsx";
-import { Workshops } from "pages/Workshops/ui/Workshops.jsx";
-import { SearchPage } from "pages/Search/ui/SearchPage.jsx";
+import { Admin } from "pages/Admin";
+import { Basket } from "pages/Basket";
+import { Shop } from "pages/Shop";
+import { Product } from "pages/Product";
+import { MainPage } from "pages/Main";
+import { Auth } from "pages/Auth";
+import { NoPage } from "pages/NoPage";
+import { About } from "pages/About";
+import { Favorites } from "pages/Favorites";
+import { Delivery } from "pages/Delivery";
+import { User } from "pages/User";
+import { Ordering } from "pages/Ordering";
+import { Workshops } from "pages/Workshops";
+import { SearchPage } from "pages/Search";
 
 import {
   ABOUT_ROUTE,

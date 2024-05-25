@@ -33,7 +33,6 @@ const Basket = observer(() => {
     zipCode: 0,
   });
 
-
   useEffect(() => {
     basketTotalPrice().then((total) => setTotalPrice(total));
   }, [user.localBasket]);
@@ -128,4 +127,4 @@ const Basket = observer(() => {
   );
 });
 
-export { Basket };
+export default Basket;
