@@ -71,7 +71,13 @@ const Shop = observer(() => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [product, product.page, product.selectedType, product.sortType.value]);
+  }, [
+    product,
+    product.page,
+    product.selectedType,
+    product.sortType.value,
+    product.limit,
+  ]);
 
   return (
     <div className={cls.shop}>
@@ -153,6 +159,20 @@ const Shop = observer(() => {
       {/* Список товаров */}
 
       {isLoading ? <Preloader /> : <ProductList />}
+
+      {/* Показать ещё */}
+      {product.totalCount > product.limit && (
+        <div className={cls.more}>
+          <CustomButton
+            theme={"inverted"}
+            onClick={() => {
+              product.setLimit(product.limit + 8);
+            }}
+          >
+            показать ещё
+          </CustomButton>
+        </div>
+      )}
 
       {/* Пагинация */}
       {product.pageCount > 1 && <Pagination />}

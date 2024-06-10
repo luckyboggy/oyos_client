@@ -92,4 +92,11 @@
       margin-top: 1rem;
     }
   }
+  .more {
+    @include breakpoint(lg) {
+      margin: auto;
+      max-width: 50%;
+      
+    }
+  }
 }

@@ -5,17 +5,17 @@ import { Text } from "shared/ui/text/Text";
 
 import cls from "./MainPage.module.scss";
 
-import mainImg01 from "shared/assets/img/png/main/Main01.png";
-import mainImgDt01 from "shared/assets/img/png/main/mainImgDt01.jpg";
-import mainImgDt01_small from "shared/assets/img/png/main/mainImgDt01_small.jpg";
+import mainImg01 from "shared/assets/img/jpg/main/Main01.jpg";
+import mainImgDt01 from "shared/assets/img/jpg/main/mainImgDt01.jpg";
+import mainImgDt01_small from "shared/assets/img/jpg/main/mainImgDt01_small.jpg";
 
-import slide01 from "shared/assets/img/png/main/slider/slide01.png";
-import slide02 from "shared/assets/img/png/main/slider/slide02.png";
-import slide03 from "shared/assets/img/png/main/slider/slide03.png";
-import slide04 from "shared/assets/img/png/main/slider/slide04.png";
-import slide05 from "shared/assets/img/png/main/slider/slide05.png";
-import slide06 from "shared/assets/img/png/main/slider/slide06.png";
-import slide07 from "shared/assets/img/png/main/slider/slide07.png";
+import slide01 from "shared/assets/img/jpg/main/slider/slide01.jpg";
+import slide02 from "shared/assets/img/jpg/main/slider/slide02.jpg";
+import slide03 from "shared/assets/img/jpg/main/slider/slide03.jpg";
+import slide04 from "shared/assets/img/jpg/main/slider/slide04.jpg";
+import slide05 from "shared/assets/img/jpg/main/slider/slide05.jpg";
+import slide06 from "shared/assets/img/jpg/main/slider/slide06.jpg";
+import slide07 from "shared/assets/img/jpg/main/slider/slide07.jpg";
 
 import { Slider } from "shared/ui/slider/Slider";
 import Image from "shared/ui/image/Image";

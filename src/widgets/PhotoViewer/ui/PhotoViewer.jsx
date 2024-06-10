@@ -47,7 +47,7 @@ const PhotoViewer = ({ images, url, startIndex, close }) => {
           >
             <Close className={cls.close} />
           </div>
-          {currentIndex > 0 && (
+          {/* currentIndex > 0 */ true && (
             <div
               className={`${cls.btn} ${cls.prevBtn}`}
               onClick={() => {
@@ -57,7 +57,7 @@ const PhotoViewer = ({ images, url, startIndex, close }) => {
               <Prev className={cls.prev} />
             </div>
           )}
-          {currentIndex < images.length - 1 && (
+          {/* currentIndex < images.length - 1 */ true && (
             <div
               className={`${cls.btn} ${cls.nextBtn}`}
               onClick={() => {

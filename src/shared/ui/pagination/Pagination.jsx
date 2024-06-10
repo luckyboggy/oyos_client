@@ -11,7 +11,6 @@ const Pagination = observer(() => {
     pages.push(i + 1);
   }
 
-  console.log(product.pageCount);
 
   return (
     <div className={cls.pagination}>
