@@ -46,6 +46,10 @@ export class ProductStore {
     this._selectedType = [...newArr];
   }
 
+  clearSelectedTypes() {
+    this._selectedType = [];
+  }
+
 
   setSelectedCollection(selectedCollection) {
     this.setPage(1);

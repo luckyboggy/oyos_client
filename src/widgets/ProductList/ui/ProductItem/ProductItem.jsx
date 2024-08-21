@@ -34,7 +34,7 @@ const ProductItem = observer(({ item }) => {
       <div className={cls.wrapper}>
         <div className={cls.productImg}>
           {img[0] ? (
-            <img src={process.env.REACT_APP_API_URL + img[0]} alt={name} />
+            <img src={process.env.REACT_APP_API_URL + img[0]} alt={name} loading="lazy"/>
           ) : (
             <PhotoLoader />
           )}

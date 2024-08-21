@@ -87,6 +87,7 @@ const CustomCarousel = ({ images, url }) => {
                 src={`${url}${image}`}
                 key={image}
                 className={classes.imageItem}
+                loading="lazy"
               />
             ))}
           </div>

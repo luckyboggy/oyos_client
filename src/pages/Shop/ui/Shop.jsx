@@ -79,6 +79,7 @@ const Shop = observer(() => {
     product.limit,
   ]);
 
+
   return (
     <div className={cls.shop}>
       {/* Модальное окно с фильтрами */}
