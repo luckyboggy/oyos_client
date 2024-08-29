@@ -28,7 +28,7 @@
       grid-template-columns: 5fr 1fr;
       .title {
         margin: 0.5rem 0;
-        font: var(--font-main-l);
+        font: var(--font-main-m);
       }
       .like {
         width: 100%;
@@ -59,6 +59,7 @@
     .description {
       margin: 1rem 0;
       font: var(--font-main-s);
+      white-space: pre-wrap;
     }
 
     .materials {

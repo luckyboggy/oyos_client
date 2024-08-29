@@ -64,6 +64,7 @@ const fetchProducts = async (typeIds, collectionId, limit, page, sortType) => {
 
 const fetchOneProduct = async (id) => {
   const { data } = await $host.get(`api/product/${id}`);
+  console.log(data)
   return data;
 };
 

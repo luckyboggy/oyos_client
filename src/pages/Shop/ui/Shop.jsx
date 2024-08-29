@@ -5,6 +5,7 @@ import { Filters } from "widgets/Filters/ui/Filters.jsx";
 import { ReactComponent as Sort } from "shared/assets/img/svg/sort.svg";
 import { ReactComponent as Close } from "shared/assets/img/svg/close.svg";
 import { Context } from "index.js";
+import { useLocation } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import { fetchTypes, fetchProducts } from "http/productAPI.js";
 import { Pagination } from "shared/ui/pagination/Pagination.jsx";
@@ -22,6 +23,7 @@ const Shop = observer(() => {
   const [selectedTypesList, setSelectedTypesList] = useState([]);
   const { product, user } = useContext(Context);
   const [isLoading, setIsLoading] = useState(true);
+  let location = useLocation();
 
   const setSelectedSort = (value) => {
     product.setSortType(SORT_TYPES.find((type) => type.value === value));
@@ -32,8 +34,17 @@ const Shop = observer(() => {
   };
 
   useEffect(() => {
-    fetchTypes().then((data) => product.setTypes(data));
-    fetchProducts(null, null, product.limit, 1, product.sortType.value)
+    console.log(product.selectedType);
+    fetchTypes()
+      .then((data) => product.setTypes(data))
+      .then(() => {});
+    fetchProducts(
+      product.selectedType,
+      null,
+      product.limit,
+      1,
+      product.sortType.value
+    )
       .then((data) => {
         product.setItems(data.rows);
         product.setTotalCount(data.count);
@@ -42,9 +53,10 @@ const Shop = observer(() => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [product]);
+  }, []);
 
   useEffect(() => {
+    setIsLoading(true);
     fetchProducts(
       product.selectedType,
       null,
@@ -78,7 +90,6 @@ const Shop = observer(() => {
     product.sortType.value,
     product.limit,
   ]);
-
 
   return (
     <div className={cls.shop}>

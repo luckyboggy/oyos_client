@@ -15,7 +15,7 @@ import { MobilSearch } from "shared/ui/search/MobilSearch";
 import { AppRouter } from "./providers/router";
 
 const App = observer(() => {
-  const { user } = useContext(Context);
+  const { user, product } = useContext(Context);
 
   const [loading, setLoading] = useState(true);
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -36,6 +36,11 @@ const App = observer(() => {
     } else {
       setFooterTheme("");
     }
+    if ((location.pathname !== "/shop") && (!location.pathname.match(/^\/product\/\d+$/))) {
+      product.clearSelectedTypes();
+    }
+
+
   }, [location]);
 
   useEffect(() => {
@@ -82,7 +87,11 @@ const App = observer(() => {
       .finally(() => {
         setLoading(false);
       });
+
+
   }, []);
+
+
 
   return (
     <div className="app">

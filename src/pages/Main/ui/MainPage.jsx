@@ -26,8 +26,6 @@ const MainPage = () => {
 
   const isLg = useScreenSize().isLg;
 
-  console.log(windowInnerWidth, windowInnerHeight);
-
   const sliderImages = [
     { img: slide02, description: "description02" }, //Кольца
     { img: slide01, description: "description01" }, //Сумки

@@ -4,7 +4,6 @@ import { ReactComponent as Arrow } from "shared/assets/img/svg/arrow.svg";
 import { CheckBox } from "shared/ui/checkbox/CheckBox";
 import cls from "./Select.module.scss";
 
-
 const Select = ({
   options,
   selected,
@@ -72,7 +71,6 @@ const Select = ({
                   type={"checkbox"}
                   checked={product.selectedType.includes(option.id)}
                   onChange={() => {
-                    console.log(option.id)
                     toggleSelectedType(option.id);
                   }}
                 >

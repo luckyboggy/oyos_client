@@ -25,8 +25,8 @@ const Slider = ({ images, isDescription }) => {
               key={slide.type.name}
               className={cls.item}
               to="shop"
-              onClick={() => {
-                product.setSelectedType(slide.type);
+              onClick={async () => {
+                await product.setSelectedType(slide.type);
               }}
             >
               {slide.img ? (
