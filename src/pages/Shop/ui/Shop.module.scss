@@ -93,9 +93,12 @@
     }
   }
   .more {
+    margin: auto;
+    max-width: 50%;
     @include breakpoint(lg) {
       margin: auto;
-      max-width: 50%;
+      margin-top: 24px;
+      max-width: 20%;
       
     }
   }

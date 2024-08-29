@@ -42,10 +42,13 @@
 
   .productContent {
     .productName {
+      text-align: center;
       font: var(--font-main-s);
+      margin: 5px 0;
     }
     .productPrice {
-      font: var(--font-main-m);
+      text-align: center;
+      font: var(--font-main-s);
     }
   }
 }

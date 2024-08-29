@@ -176,8 +176,9 @@ const Shop = observer(() => {
       {product.totalCount > product.limit && (
         <div className={cls.more}>
           <CustomButton
-            theme={"inverted"}
-            onClick={() => {
+            /* theme={"inverted"} */
+            onClick={(e) => {
+              e.preventDefault();
               product.setLimit(product.limit + 8);
             }}
           >
@@ -187,7 +188,7 @@ const Shop = observer(() => {
       )}
 
       {/* Пагинация */}
-      {product.pageCount > 1 && <Pagination />}
+      {/* product.pageCount > 1 && <Pagination /> */}
     </div>
   );
 });

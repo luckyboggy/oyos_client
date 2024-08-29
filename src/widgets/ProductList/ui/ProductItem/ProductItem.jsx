@@ -51,7 +51,7 @@ const ProductItem = observer(({ item }) => {
 
       <div className={cls.productContent}>
         <div className={cls.productName}>{name}</div>
-        <div className={cls.productPrice}>{price.toLocaleString()} р.</div>
+        <div className={cls.productPrice}>{price.toLocaleString()} руб.</div>
       </div>
     </div>
   );
